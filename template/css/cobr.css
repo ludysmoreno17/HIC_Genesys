@@ -22,8 +22,11 @@ body
 .webchat-security-key-form {
   border: 1px solid red;
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
-  width: 100%;
+  
+  max-width: 1600px;
 }
 
 
