@@ -1,0 +1,51 @@
+body
+{
+  display: block;
+  margin: 8px;  
+  background-color: #FBFCFC;
+}
+
+
+.input-group {
+    position: relative;
+    display: table;
+    border-collapse: separate;
+}
+
+.webchat-security-key-form {
+  border: 1px solid red;
+  display: flex;
+  justify-content: center;
+  width: 90%;
+}
+
+
+.webchat-security-key-form * {
+    font-family: 'Lato',Arial,"Helvetica Neue",Helvetica,sans-serif;
+    box-sizing: border-box;
+}
+
+
+
+.btn-primary {
+    color: #fff;
+    background-color: red;
+    outline: none;
+}
+
+.btn-primary:hover {
+  background-color: red; 
+  color: white;
+}
+
+.btn-primary:focus {
+  background-color: red; 
+  color: white;
+}
+
+.input-group {
+    width: 30%;
+    position: relative;
+    display: table;
+    border-collapse: separate;
+}
