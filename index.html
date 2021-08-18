@@ -37,72 +37,70 @@
     <script src="https://cobrowse.mypurecloud.com/cobrowse-jsapi-v1.js?deploymentKey=FHr7VCu9k6sTcRzjmFil64Gf6s816X1v" type="text/javascript"></script>
     <!--Bug al desplegar el cobrowse -->
     <script type="text/javascript">
-        let genesysWebchat = (function() {
-            
-            function createCobrowseConfig(){
-    
-                return {
-                    // Web chat application URL. Use the correct top-level domain for your Genesys Cloud region, i.e. apps.mypurecloud.ie, apps.mypurecloud.jp, apps.mypurecloud.co.uk.
-                "webchatAppUrl": "https://apps.mypurecloud.com/webchat",
+           let genesysWebchat = (function() {
 
-                // Web chat service URL
-                "webchatServiceUrl": "https://realtime.mypurecloud.com:443",
+function createCobrowseConfig(){
 
-                // Numeric organization ID
-                "orgId": 46970,
+    return {
+        // Web chat application URL. Use the correct top-level domain for your Genesys Cloud region, i.e. apps.mypurecloud.ie, apps.mypurecloud.jp, apps.mypurecloud.co.uk.
+    "webchatAppUrl": "https://apps.mypurecloud.com/webchat",
 
-                // OrgGuid. Needed for co-browse with voice.
-                "orgGuid": "c3fe9f74-924f-4ca8-a293-96900e7f8bf5",
+    // Web chat service URL
+    "webchatServiceUrl": "https://realtime.mypurecloud.com:443",
 
-                // Organization name
-                "orgName": "bancodaviviendasa",
+    // Numeric organization ID
+    "orgId": 46970,
 
-                // Log level
-                "logLevel": "DEBUG",
+    // OrgGuid. Needed for co-browse with voice.
+    "orgGuid": "c3fe9f74-924f-4ca8-a293-96900e7f8bf5",
 
-                // Locale code
-                "locale": "es",
+    // Organization name
+    "orgName": "bancodaviviendasa",
 
-                // CSS class applied to the security key window, but not its contents
-                "cssClass": "webchat-frame",
+    // Log level
+    "logLevel": "DEBUG",
 
-                // Custom style applied to the security key window, but not its contents
-                "css": {
-                    
-                    
-                    
-                },
-                /*
-                "width": "100%",
-                    "height": "100%"
-                */
-                // Optional CSS for styling security key form
-                "contentCssUrl": "https://richardsuan.github.io/prueba_dav/template/css/cobr.css",
+    // Locale code
+    "locale": "es",
 
-                // Element id where the security key form will appear.
-                "containerEl": "cobrowse-security-form",
+    // CSS class applied to the security key window, but not its contents
+    "cssClass": "webchat-frame",
 
-                // Set to true to display security key form. Do not include for co-browse with web chat or for PureConnect co-browse with voice.
-                "promptForSecurityKey": true
-            };
-        }
-        return {
-            startCobrowse: function() {
-                var frames = document.querySelector(".webchat-frame");
-                if (frames === null ) {
-                    let config = createCobrowseConfig();
+    // Custom style applied to the security key window, but not its contents
+    "css": {
+        
+        "background-color": "red",
 
-                    // Can also use callback
-                    ININ.cobrowse.create(config)
-                        .then(function(result) {
-                            // Handle success
-                        })
-                        .catch(function(err) {
-                            // Handle failure
-                        });
-                }
-            }
-    })();
+    },
+
+    // Optional CSS for styling security key form
+    "contentCssUrl": "https://richardsuan.github.io/prueba_dav/template/css/cobr.css",
+
+    // Element id where the security key form will appear.
+    "containerEl": "cobrowse-security-form",
+
+    // Set to true to display security key form. Do not include for co-browse with web chat or for PureConnect co-browse with voice.
+    "promptForSecurityKey": true
+};
+}
+return {
+startCobrowse: function() {
+    var frames = document.querySelector(".webchat-frame");
+    if (frames === null ) {
+        let config = createCobrowseConfig();
+
+        // Can also use callback
+        ININ.cobrowse.create(config)
+            .then(function(result) {
+                // Handle success
+            })
+            .catch(function(err) {
+                // Handle failure
+            });
+    }
+}
+}
+})();
     </script>
 
 </body>
