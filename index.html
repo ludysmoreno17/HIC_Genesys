@@ -88,18 +88,20 @@
         }
         return {
             startCobrowse: function() {
-                let config = createCobrowseConfig();
+                var frames = document.querySelector(".webchat-frame");
+                if (frames === null ) {
+                    let config = createCobrowseConfig();
 
-                // Can also use callback
-                ININ.cobrowse.create(config)
-                    .then(function(result) {
-                        // Handle success
-                    })
-                    .catch(function(err) {
-                        // Handle failure
-                    });
+                    // Can also use callback
+                    ININ.cobrowse.create(config)
+                        .then(function(result) {
+                            // Handle success
+                        })
+                        .catch(function(err) {
+                            // Handle failure
+                        });
+                }
             }
-        }
     })();
     </script>
 
