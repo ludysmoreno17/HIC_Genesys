@@ -7,7 +7,7 @@
 .webchat-frame
 {
 
-    width: 1600px;
+    max-width: 1600px;
     
     margin: auto;
     display: block;
