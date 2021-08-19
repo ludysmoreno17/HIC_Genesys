@@ -41,14 +41,14 @@ body
 
 
 .btn-primary {
-    
+    width: 30%;
     background: linear-gradient(180deg, #ed1c27 0%, #a53131 100%);
     outline: none;
 }
 
 .btn-primary:hover {
-  background-color: rgb(255, 255, 255); 
-  color: white;
+  background: linear-gradient(180deg, #ed1c27 0%, #ffffff 100%);
+  
 }
 
 .btn-primary:focus {
@@ -57,7 +57,7 @@ body
 }
 
 .input-group {
-    
+    width: 30%;
     position: relative;
     display: table;
     border-collapse: separate;
