@@ -41,7 +41,7 @@ body
 
 
 .btn-primary {
-    width: 30%;
+    width: 170px;
     background: linear-gradient(180deg, #ed1c27 0%, #a53131 100%);
     outline: none;
 }
@@ -52,12 +52,11 @@ body
 }
 
 .btn-primary:focus {
-  background-color: red; 
-  color: white;
+  background: linear-gradient(180deg, #ff000d 0%, #ff000d 100%);
 }
 
 .input-group {
-    width: 30%;
+    width: 340px;
     position: relative;
     display: table;
     border-collapse: separate;
