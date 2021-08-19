@@ -1,11 +1,11 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>3 Davivienda co-browse with voice example</title>
+    <title> Davivienda co-browse with voice example</title>
     <link href="./template/css/style.css" rel="stylesheet" type="text/css"/>
 </head>
 
-<body>
+<body onload="genesysWebchat.startCobrowse()">
     <div class="titulo">
         
         <h1>Co-browse </h1>
@@ -23,10 +23,8 @@
             
         </ul>
     </nav>
-   <div class="container_button">
-        <button type="button" id="start-cobrowse" onclick="genesysWebchat.startCobrowse()">Ingresar codigo co browse</button>
+  
 
-   </div>
     <!-- Div with this id required to display security key form -->
     <div id="cobrowse-security-form"></div>
 

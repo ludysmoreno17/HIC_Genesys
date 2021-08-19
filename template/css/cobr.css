@@ -9,7 +9,7 @@ body
   margin:0; 
   padding: 0;
   display: block;
-   
+  max-width: 1600px;
   background-color: #FBFCFC;
 }
 
@@ -21,7 +21,7 @@ body
 }
 
 .webchat-security-key-form {
-  border: 1px solid red;
+  border: 0px solid red;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -41,23 +41,22 @@ body
 
 
 .btn-primary {
-    color: #fff;
+    width: 170px;
     background: linear-gradient(180deg, #ed1c27 0%, #a53131 100%);
     outline: none;
 }
 
 .btn-primary:hover {
-  background-color: red; 
-  color: white;
+  background: linear-gradient(180deg, #ed1c27 0%, #ffffff 100%);
+  
 }
 
 .btn-primary:focus {
-  background-color: red; 
-  color: white;
+  background: linear-gradient(180deg, #ff000d 0%, #ff000d 100%);
 }
 
 .input-group {
-    
+    width: 340px;
     position: relative;
     display: table;
     border-collapse: separate;
