@@ -8,20 +8,16 @@ body
 {
   margin:0; 
   padding: 0;
-  display: block;
+
   max-width: 1600px;
   background-color: #FBFCFC;
 }
 
 
-.input-group {
-    position: relative;
-    display: table;
-    border-collapse: separate;
-}
-
 .webchat-security-key-form {
-  border: 0px solid red;
+  /*caja que acoje al boton y input box */
+  
+  border: 1px solid red;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -41,6 +37,8 @@ body
 
 
 .btn-primary {
+    /**/  
+    
     width: 170px;
     background: linear-gradient(180deg, #ed1c27 0%, #a53131 100%);
     outline: none;
