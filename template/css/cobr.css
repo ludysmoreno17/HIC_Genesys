@@ -21,7 +21,7 @@ body
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
-  height: 100%;
+  height: 100px;
 }
 
 
@@ -33,7 +33,9 @@ body
 .input-group.input-group-lg {
   display: block;
 }
-
+span.input-group-btn {
+  padding-top: 10px;
+}
 .btn-primary {
     /**/  
     
