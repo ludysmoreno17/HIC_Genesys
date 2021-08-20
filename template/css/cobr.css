@@ -38,7 +38,7 @@ span.input-group-btn {
 }
 .btn-primary {
     /**/  
-    
+    text-align: left;
     width: 300px;
     background: linear-gradient(180deg, #ed1c27 0%, #a53131 100%);
     outline: none;
