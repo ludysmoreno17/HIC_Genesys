@@ -12,7 +12,9 @@ body
   max-width: 1600px;
   background-color: #FBFCFC;
 }
-
+.error-section.animated.bounceIn {
+  padding-top: 90px;
+}
 
 .webchat-security-key-form {
   /*caja que acoje al boton y input box */
