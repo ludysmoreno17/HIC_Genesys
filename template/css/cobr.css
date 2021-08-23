@@ -16,7 +16,7 @@ body
 
 .webchat-security-key-form {
   /*caja que acoje al boton y input box */
-  border: 1px solid red;
+  border: 0px solid red;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
