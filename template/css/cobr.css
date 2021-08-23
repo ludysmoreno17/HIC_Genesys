@@ -29,7 +29,6 @@ body
 
 .webchat-security-key-form * {
     font-family: cursive,Arial,"Helvetica Neue",Helvetica,sans-serif;
-   
 }
 
 .input-group.input-group-lg {
@@ -38,17 +37,110 @@ body
 span.input-group-btn {
   padding-top: 10px;
 }
+
+/*========================== Nuevo CSS ===============================*/
+.input--security-key{
+  border-radius: 20px !important;
+  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 400;
+  text-align: center;
+  font-style: normal;
+  color: #404040;
+  transition-duration: .2s;
+  margin-top: 43px;
+}
+
+
+.input-group{
+
+}
+.input-group::before{
+  content: "¿Desea iniciar la asistencia remota?";
+  border-width: 1px 1px 0 0;
+  top: -54px;
+  position: absolute;
+  margin: 0px auto;
+  z-index: 99;
+  display: inline-block;
+  width: 100%;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 700;
+  text-align: center;
+  font-style: normal;
+  color: #000000;
+}
+
+.input-group::after{
+  content: "Tendrá que darle acceso a un asesor para que ingrese en su sesión. Recuerde que el asesor no podrá ver sus datos financieros.";
+  border-width: 1px 1px 0 0;
+  top: -22px;
+  position: absolute;
+  margin: 0px auto;
+  z-index: 99;
+  display: inline-block;
+  width: 100%;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  line-height: 14px;
+  font-weight: 400;
+  text-align: center;
+  font-style: normal;
+  color: #404040;
+}
+
+.start-section{
+  margin-top: 170px;
+  position: relative;
+}
+
+.start-section::before{
+  background-image: url('../DashboardDavivienda_files/Icon-popUp-info.svg');
+  content: "";
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: -123px;
+  pointer-events: none;
+  transition: all 0.2s ease-out;
+  opacity: 1;
+  pointer-events: none;
+}
+
+
+.webchat-security-key-form .start-section .error-section{
+  top: 62px;
+  font-family: "Roboto", sans-serif;
+}
+
+/*=====================================================================*/
 .btn-primary {
     /**/  
     text-align: left;
     width: 300px;
-    background: linear-gradient(180deg, #ed1c27 0%, #a53131 100%);
+    /*background: linear-gradient(180deg, #ed1c27 0%, #a53131 100%);*/
     outline: none;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 700;
+    text-align: center;
+    font-style: normal;
+    border-radius: 40px !important;
+    background-color: #e1111c !important;
+    border: 0px;
 }
 
 .btn-primary:hover {
-  background: linear-gradient(180deg, #ed1c27 0%, #ffffff 100%);
-  
+  /*background: linear-gradient(180deg, #ed1c27 0%, #ffffff 100%);*/
 }
 
 .btn-primary:focus {
