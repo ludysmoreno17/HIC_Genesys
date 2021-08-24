@@ -101,7 +101,7 @@ span.input-group-btn {
 }
 
 .start-section::before{
-  background-image: url('../DashboardDavivienda_files/Icon-popUp-info.svg');
+  background-image: url('../../Icon-popUp-info.svg');
   content: "";
   background-repeat: no-repeat;
   background-size: 100% 100%;
