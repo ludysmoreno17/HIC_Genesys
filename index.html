@@ -44,6 +44,7 @@
 
 		<div class="overlay" id="overlay">
 			<div class="popup" id="popup">
+				
 				<a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
 				
 				
@@ -112,6 +113,9 @@
 					ININ.cobrowse.create(config)
 						.then(function(result) {
 							// Handle success
+							var span = document.getElementById('btn-cerrar-popup');
+
+                            span.click();
 						})
 						.catch(function(err) {
 							// Handle failure
@@ -120,6 +124,11 @@
 			}
 			}
 			})();
+			function cerrar(){
+				var span = document.getElementById('btn-cerrar-popup');
+
+                span.click();
+			}
 				</script>
 			</div>
 		</div>
