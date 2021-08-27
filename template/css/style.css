@@ -6,7 +6,7 @@
 }
 .webchat-frame
 {
-
+    /*con este se modifica la caja del co-browse*/
     max-width: 1600px;
     width: 100%;
     border: 0px;

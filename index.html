@@ -7,7 +7,7 @@
 	<link rel="shortcut icon" href="./índice.ico">
 </head>
 
-<body onload="genesysWebchat.startCobrowse()">
+<body >
     <div class="titulo">
         
         <h1>Co-browse </h1>
@@ -56,7 +56,7 @@
 			
 				<!-- For co-browse with voice, you must load the co-browse API. Co-browse with web chat loads the co-browse API for you. -->
 				<script src="https://cobrowse.mypurecloud.com/cobrowse-jsapi-v1.js?deploymentKey=FHr7VCu9k6sTcRzjmFil64Gf6s816X1v" type="text/javascript"></script>
-				<!--Bug al desplegar el cobrowse -->
+				<!-- la linea de arriba se debe poner en las diferentes paginas  que se van a usar-->
 				<script type="text/javascript">
 					   let genesysWebchat = (function() {
 			
@@ -90,7 +90,7 @@
 				// Custom style applied to the security key window, but not its contents
 				"css": {
 					
-					"background-color": "red",
+					
 			
 				},
 			
@@ -114,6 +114,7 @@
 					ININ.cobrowse.create(config)
 						.then(function(result) {
 							// Handle success
+							//aqui se cierra la ventana del pop up de genesys 
 							var span = document.getElementById('btn-cerrar-popup');
 
                             span.click();
@@ -125,11 +126,7 @@
 			}
 			}
 			})();
-			function cerrar(){
-				var span = document.getElementById('btn-cerrar-popup');
-
-                span.click();
-			}
+			
 				</script>
 			</div>
 		</div>
