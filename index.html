@@ -122,10 +122,26 @@
 						.catch(function(err) {
 							// Handle failure
 						});
+					console.log("***********  nuevo ************");
+					intervalID = setInterval(cambiarCSSiFrm, 500);
+					console.log("***********  nuevo ************");
 				}
 			}
 			}
 			})();
+			function cambiarCSSiFrm(){
+        var d = new Date();
+        console.log(" ------------------ cambiarCSSiFrm ----------------------------  " + d.toLocaleTimeString());
+        var webchatframe = document.getElementsByClassName("webchat-frame");
+            if (webchatframe.length > 0) {
+                webchatframe[0].onload = function () {
+                            var da = new Date();
+                            console.log(" ------------------ ifrm loaded ----------------------------  " + da.toLocaleTimeString());
+                            webchatframe[0].className = "webchat-frame2";
+                        } ;
+                 clearInterval(intervalID);
+            }
+    }		
 			
 				</script>
 			</div>
