@@ -131,6 +131,7 @@
 			}
 			}
 			})();
+			//funcion para verificar si ya se cargi el estilo del co browse
 			function cambiarCSSiFrm(){
         var d = new Date();
         console.log(" ------------------ cambiarCSSiFrm ----------------------------  " + d.toLocaleTimeString());
@@ -144,7 +145,21 @@
                  clearInterval(intervalID);
             }
     }		
-			
+	//funcion para enviar eventos si se cierra el cobrowse 		
+	window.onload = function() {
+           window.addEventListener("message", (event) => {
+            if(event.origin !== 'https://dhqbrvplips7x.cloudfront.net')
+                 return;
+                console.log('::::::::::::::::::::::::::::event.data:::::::::::::::::::::::');
+                console.log(event);
+                console.log(event.data);
+                console.log('::::::::::::::::::::::::::::event.data  ejecutar :::::::::::::::::::::::');
+            if (window.PureCloud.cobrowse.getSharerSession().data.sessionState.data == 'ENDED'){
+                console.log('::::::::::::::::::::::::::::* SESION CERRADA :::::::::::::::::::::::');
+            }
+            }, false);
+         };
+
 				</script>
 			</div>
 		</div>
