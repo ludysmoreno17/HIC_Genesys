@@ -58,6 +58,7 @@
 				<script src="https://cobrowse.mypurecloud.com/cobrowse-jsapi-v1.js?deploymentKey=FHr7VCu9k6sTcRzjmFil64Gf6s816X1v" type="text/javascript"></script>
 				<!-- la linea de arriba se debe poner en las diferentes paginas  que se van a usar-->
 				<script type="text/javascript">
+					   let  intervalID;
 					   let genesysWebchat = (function() {
 			
 			function createCobrowseConfig(){
@@ -107,7 +108,8 @@
 			return {
 			startCobrowse: function() {
 				var frames = document.querySelector(".webchat-frame");
-				if (frames === null ) {
+				var frames2 = document.querySelector(".webchat-frame2");
+				if (frames === null && frames2 === null) {
 					let config = createCobrowseConfig();
 			
 					// Can also use callback
