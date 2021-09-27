@@ -7,11 +7,10 @@
 .webchat-frame
 {
     /*con este se modifica la caja del co-browse*/
-    max-width: 1600px;
+    height: 500px;
     width: 100%;
-    border: 0px;
-	height: 500px;
-   
+    margin: auto;
+    display: none;
 }
 .webchat-frame2
 {
@@ -20,6 +19,7 @@
     width: 100%;
     border: 0px;
 	height: 500px;
+	
    
 }
 .titulo{
