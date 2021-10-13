@@ -170,6 +170,7 @@ button{
 }
 #miframe{
     margin: auto;
+    max-width: 600px;
 }
 
 
