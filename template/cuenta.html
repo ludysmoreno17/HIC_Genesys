@@ -18,9 +18,9 @@
 							var script = document.createElement("script");
 							var callback_mode = true;
 							async_mode = true;
-							
+
 							script.type = "text/javascript";
-						
+
 							// Check async mode parameter
 							if (async_mode === undefined || typeof async_mode != 'boolean') {
 								//console.log(
@@ -33,7 +33,7 @@
 									'loadScript: Missing callback function, script will be loaded without callback action')
 								callback_mode = false;
 							}
-						
+
 							// Prepare script to run callback function when loaded
 							if (script.readyState) { //IE
 								script.onreadystatechange = function () {
@@ -53,23 +53,23 @@
 							script.src = "https://dxj.davivienda.com/scripts/3fbbe2c8/3fbbe2c8.js";
 							document.getElementsByTagName("head")[0].appendChild(script);
 						};
-						
+
 						loadScript(function () {
 							cdApi.setCustomerSessionId('4SQckNIYgppjkYc2go7ZHIj3vzWxf_lr!-1200682611!1628271858200');
 							cdApi.changeContext('DAS_PN');
-						});	
-						
+						});
+
 					}
 						catch(error){console.error(error);}
-					
+
 					/* ]]> */
 				</script><script type="text/javascript" async="" src="DashboardDavivienda_files/3fbbe2c8.js"></script><script type="text/javascript" src="DashboardDavivienda_files/jsf_002.jsf"></script><script type="text/javascript" src="DashboardDavivienda_files/GTMLib.jsf"></script><link type="text/css" rel="stylesheet" href="DashboardDavivienda_files/pfm.css"><script type="text/javascript" src="DashboardDavivienda_files/pfm.jsf"></script><link type="text/css" rel="stylesheet" href="DashboardDavivienda_files/jquery.css"><link type="text/css" rel="stylesheet" href="DashboardDavivienda_files/loader.css"><link type="text/css" rel="stylesheet" href="DashboardDavivienda_files/estilos_ad.css"><link type="text/css" rel="stylesheet" href="DashboardDavivienda_files/fonts.css"><script type="text/javascript" src="DashboardDavivienda_files/jquery-custom.jsf"></script><script type="text/javascript" src="DashboardDavivienda_files/jquery.jsf"></script><script type="text/javascript" src="DashboardDavivienda_files/jquery_002.jsf"></script><script type="text/javascript" src="DashboardDavivienda_files/modernizr.jsf"></script><script type="text/javascript" src="DashboardDavivienda_files/funciones_um.jsf"></script><script type="text/javascript" src="DashboardDavivienda_files/loader.jsf"></script><script type="text/javascript" src="DashboardDavivienda_files/overlaymenu.jsf"></script><script type="text/javascript" src="DashboardDavivienda_files/jsf.jsf"></script>
                 <!-- codigo genesys (noscript) -->
                 <script src="https://cobrowse.mypurecloud.com/cobrowse-jsapi-v1.js?deploymentKey=FHr7VCu9k6sTcRzjmFil64Gf6s816X1v" type="text/javascript"></script>
                 </head>
                 <body style="overflow-x: visible" class="">
-	            
-				
+
+
                     <header class="dashboard">
         <div class="cabecera">
             <div class="wrap">
@@ -77,7 +77,7 @@
                 <div class="sesion">
                     <ul>
                         <li>Ejemplo Dashboard</li>
-	                        
+
                         <li class="configuracion">Menu<span class="desplegar"></span>
                             <ul>
                             	<li class="opcion"><a id="dashboardform:j_idt47" href="../index.html">Co browse-Inicio</a>
@@ -87,6 +87,8 @@
                                 <li class="opcion"><a id="dashboardform:j_idt59" href="./chat.html" >Chat</a>
                                 </li>
                                 <li class="opcion"><a id="dashboardform:j_idt59" href="./PruebaConFormularioTodosLosCampos.html" >Chat2</a>
+                                </li>
+                                <li class="opcion"><a id="dashboardform:j_idt59" href="./chat3.html" >Chat3</a>
                                 </li>
                                 <li class="opcion"><a id="dashboardform:j_idt59" href="./contenido.html" >Contenido</a>
                                 </li>
@@ -99,7 +101,7 @@
                         </li>
                     </ul>
                 </div>
-            </div>       
+            </div>
         </div>
                     </header>
                     <section id="seccioncentral" class="inner dashboard">
@@ -112,7 +114,7 @@
                         <br>
                         <h2>Mis <span>Productos</span></h2>
 
-                        
+
 		                <p class="ingreso">
 		                    Último ingreso: 06/08/2021 - 11:46:52 am | IP 192.168.0.1
 		                </p></span><div id="dashboardform:notifyPanel" style="float:right; position: relative; margin-left: 20px; margin-top: 15px;"><a id="dashboardform:notifications" href="#" onclick="jsf.util.chain(this,event,'gtmEvent(\'Notificaciones\',\'Enlace Notificaciones\',\'Notificaciones\')','mojarra.ab(this,event,\'action\',0,\'dashboardform:sf-alerts-placeholder3\')');return false" class="btn btn-pfm-alerts">2</a>
@@ -126,7 +128,7 @@
 		                            method: "GET",
 		                            crossDomain: "true",
 		                            dataType: 'json',
-		                            cache: false, 
+		                            cache: false,
 		                            beforeSend: function(xhr){
 		                            				//console.log("/alerts/total/get.action before send");
 		                                            xhr.setRequestHeader('Access-Control-Allow-Headers', 'x-requested-with');
@@ -146,13 +148,13 @@
 		                                            var decodeLinkBtnId =  "messageForm:decodeLink";
 		                            }
 				                });
-				                
+
 				                $(document).bind("ajaxStart ajaxStop");
 				                });
-				                
+
 						 	//]]>
 			            </script><div id="dashboardform:sf-alerts-placeholder3" style="position: relative; margin-left: -38%; margin-top: -19%;"></div></div><span id="dashboardform:rightBar" style="float:right; margin-top: 15px;"><div id="dashboardform:panelGastos" class="pfm-saldo-gastado">
-		                	<p id="gastado" style="color: #ffffff; float: left; padding-left: 65px; position: relative; bottom: 10px; white-space: pre; line-height:16px; text-align:center;">Mis gastos, a hoy 
+		                	<p id="gastado" style="color: #ffffff; float: left; padding-left: 65px; position: relative; bottom: 10px; white-space: pre; line-height:16px; text-align:center;">Mis gastos, a hoy
  $0</p><a id="dashboardform:verMas" href="#" onclick="jsf.util.chain(this,event,'gtmEvent(\'Ver Más\',\'Enlace Ver Más\',\'Ver Más\')','mojarra.ab(this,event,\'action\',0,\'dashboardform dashboardform:pagepanel dashboardform:navcontainer dashboardform:mainDiv dashboardform:sf-analysis-placeholder dashboardform:mainApp\')');return false" class="pfm-ver-mas">Ver más</a><a id="dashboardform:verMasRedirecction" href="#" style="display:none" onclick="jsf.util.chain(this,event,'gtmEvent(\'Ver Más\',\'Enlace Ver Más\',\'Ver Más\');','mojarra.ab(this,event,\'action\',0,\'dashboardform dashboardform:pagepanel dashboardform:navcontainer dashboardform:mainDiv dashboardform:sf-analysis-placeholder dashboardform:mainApp\')');return false" class="pfm-ver-mas"></a></div>
 		                <script type="text/javascript" language="javascript">
 		                	//<![CDATA[
@@ -164,7 +166,7 @@
 		                            method: "GET",
 		                            crossDomain: "true",
 		                            dataType: 'json',
-		                            cache: false, 
+		                            cache: false,
 		                            beforeSend: function(xhr){
 		                            				//console.log("/details/total/get.action before send");
 		                                            xhr.setRequestHeader('Access-Control-Allow-Headers', 'x-requested-with');
@@ -184,31 +186,31 @@
 		                                            var decodeLinkBtnId =  "messageForm:decodeLink";
 		                            }
 				                });
-				                
+
 				                $(document).bind("ajaxStart ajaxStop");
 				                });
 						 	//]]>
 			            </script></span></div><div id="dashboardform:mainApp" class="wrap">
-      
-	
+
+
 		<title>Davivienda</title>
 	<div id="dashboardform:navcontainer">
         <nav class="productos">
                 <ul>
-                    <li><a id="dashboardform:linkresumen" href="#" title="Actualizar Saldos" onclick="jsf.util.chain(this,event,'gtmEvent(\'Resumen\',\'Enlace Resumen\',\'Resumen\')','mojarra.ab(this,event,\'action\',0,\'dashboardform\',{\'onevent\':handleDisableButton,\'enable\':\'true\',\'callService\':\'true\',\'page\':\'dashboard.pages.resumen\'})');return false" class="resumen"> 
-                            <em class="resumen-small"></em>	
-                            <p>Resumen</p></a>						
+                    <li><a id="dashboardform:linkresumen" href="#" title="Actualizar Saldos" onclick="jsf.util.chain(this,event,'gtmEvent(\'Resumen\',\'Enlace Resumen\',\'Resumen\')','mojarra.ab(this,event,\'action\',0,\'dashboardform\',{\'onevent\':handleDisableButton,\'enable\':\'true\',\'callService\':\'true\',\'page\':\'dashboard.pages.resumen\'})');return false" class="resumen">
+                            <em class="resumen-small"></em>
+                            <p>Resumen</p></a>
                     </li>
                     <li><a id="dashboardform:linkcuentas" href="#" title="Cuentas" onclick="jsf.util.chain(this,event,'gtmEvent(\'Cuentas\',\'Enlace Cuentas\',\'Cuentas\')','mojarra.ab(this,event,\'action\',0,\'dashboardform\',{\'onevent\':handleDisableButton,\'enable\':\'true\',\'page\':\'dashboard.pages.cuentas\'})');return false" class=""><div class="head cuentas">
-                                <em class="cuentas-small"></em>	
-                                <p>Cuentas</p></div></a>		
+                                <em class="cuentas-small"></em>
+                                <p>Cuentas</p></div></a>
                     </li>
                     <li><a id="dashboardform:linktcredito" href="#" title="Tarjetas de Crédito" onclick="jsf.util.chain(this,event,'gtmEvent(\'Tarjeta de Crédito\',\'Enlace Tarjeta de Crédito\',\'Tarjeta de Crédito\')','mojarra.ab(this,event,\'action\',0,\'dashboardform\',{\'onevent\':handleDisableButton,\'enable\':\'true\',\'page\':\'dashboard.pages.tcreditos\'})');return false" class=""><div class="head tarjeta">
-                                <em class="tarjeta-small"></em>	
+                                <em class="tarjeta-small"></em>
                                 <p>Tarjetas de Crédito</p></div></a>
                     </li>
                     <li><a id="dashboardform:linkcreditos" href="#" title="Créditos" onclick="jsf.util.chain(this,event,'gtmEvent(\'Créditos\',\'Enlace Créditos\',\'Créditos\')','mojarra.ab(this,event,\'action\',0,\'dashboardform\',{\'onevent\':handleDisableButton,\'enable\':\'false\',\'page\':\'dashboard.pages.creditos\'})');return false" class="tab-sin-productos"><div class="head credito">
-                                <em class="credito-small"></em>	
+                                <em class="credito-small"></em>
                                 <p>Crédito</p></div></a>
                     </li>
                     <li><a id="dashboardform:linkinversiones" href="#" title="Inversiones" onclick="jsf.util.chain(this,event,'gtmEvent(\'Inversiones\',\'Enlace Inversiones\',\'Inversiones\')','mojarra.ab(this,event,\'action\',0,\'dashboardform\',{\'onevent\':handleDisableButton,\'enable\':\'true\',\'page\':\'dashboard.pages.inversiones\'})');return false" class="tab-sin-productos-no-bloq"><div class="head inversiones">
@@ -217,10 +219,10 @@
                     <li><a id="dashboardform:linkseguros" href="#" title="Seguros" onclick="jsf.util.chain(this,event,'gtmEvent(\'Seguros\',\'Enlace Seguros\',\'Seguros\')','mojarra.ab(this,event,\'action\',0,\'dashboardform\',{\'onevent\':handleDisableButton,\'enable\':\'true\',\'page\':\'dashboard.pages.seguros\'})');return false" class=""><div class="head seguros">
 							<em class="seguros-small"></em>
 							<p>Seguros</p></div><img id="dashboardform:cargandoboton" src="DashboardDavivienda_files/ajax-loader.gif" style="display:none" width="20" height="20"></a></li>
-					 
+
 	             </ul>
         </nav></div><div id="dashboardform:pagepanel"><div xmlns="http://www.w3.org/1999/xhtml">
-         
+
     <div class="content-resumen">
 			<script type="text/javascript">
 				/* <![CDATA[ */
@@ -442,13 +444,13 @@
 </tr>
 </tbody>
 </table>
-	
+
         <div class="links">
-                
-                
+
+
         </div>
     </div><div id="dashboardform:movblock"><div class="consulta" xmlns="http://www.w3.org/1999/xhtml">
-    
+
     <h3>
         Mis <span>últimos movimientos</span>
     </h3><div id="dashboardform:divMovimientos" class="form">
@@ -461,19 +463,19 @@
 </select><div id="dashboardform:spanProductoSeleccionado">
                     <span class="select">---</span></div>
             </div>
-            
-            
-            
+
+
+
         </div><a id="dashboardform:j_idt241" href="#" style="margin: 16px 0 0;" onclick="jsf.util.chain(this,event,'gtmEvent(\'Mis Movimientos\',\'Enlace Consultar\',\'Mis Movimientos\')','mojarra.ab(this,event,\'action\',0,\'dashboardform dashboardform:divMsgMovimientos dashboardform:divMsgExtracto dashboardform:divControlesExtracto dashboardform:divDetalleMovimientos dashboardform:tablaMovimientos dashboardform:btnMasMovimientos\',{\'onevent\':mostrarDetalleMov})');return false" class="btn mas-movimientos consultaMovimientos buttonDisabled">
             Consultar
             </a></div><div id="dashboardform:divExtractoDetalle" class="resultado hideResultMov">
         <div class="movimientos"><div id="dashboardform:divControlesExtracto" class="extracto"><div id="dashboardform:divCalendario" class="calendario">
                     <div class="months" id="buttons"><a id="dashboardform:prev" href="#" title="Mes anterior" onclick="jsf.util.chain(this,event,'gtmEvent(\'Mis Movimientos\',\'Enlace Anterior Mes\',\'Mis Movimientos\')','mojarra.ab(this,event,\'action\',\'@this\',\'dashboardform:divCalendario\')');return false" class="flechaMesAnteriorDisable">anterior
-                            </a> 
+                            </a>
                         <span class="month"></span><a id="dashboardform:next" href="#" title="Siguiente mes" onclick="jsf.util.chain(this,event,'gtmEvent(\'Mis Movimientos\',\'Enlace Siguiente Mes\',\'Mis Movimientos\')','mojarra.ab(this,event,\'action\',\'@this\',\'dashboardform:divCalendario\')');return false" class="flechaMesSiguienteEnableDisbale">siguiente
                             </a>
                     </div>
-                    
+
                     <div class="years"><a id="dashboardform:yearprev" href="#" title="Año anterior" onclick="jsf.util.chain(this,event,'gtmEvent(\'Mis Movimientos\',\'Enlace Anterior Año\',\'Mis Movimientos\')','mojarra.ab(this,event,\'action\',\'@this\',\'dashboardform:divCalendario\')');return false" class="flechaAnioAnteriorDisable">anterior
                             </a>
                         <span class="year"></span><a id="dashboardform:nextyear" href="#" title="Siguiente año" onclick="jsf.util.chain(this,event,'gtmEvent(\'Mis Movimientos\',\'Enlace Siguiente Año\',\'Mis Movimientos\')','mojarra.ab(this,event,\'action\',\'@this\',\'dashboardform:divCalendario\')');return false" class="flechaAnioSiguienteDisable">siguiente
@@ -498,7 +500,7 @@
                     </div>
                 </div><a id="dashboardform:j_idt264" href="#" title="Descargar extracto del mes" onclick="jsf.util.chain(this,event,'gtmEvent(\'Mis Movimientos\',\'Enlace Extractos\',\'Mis Movimientos\')','mojarra.ab(this,event,\'action\',0,\'dashboardform:divExtractoDetalle dashboardform:divControlesExtracto dashboardform:divMsgExtracto dashboardform:divDetalleMovimientos\',{\'onevent\':handleDisableButton})');return false" class="btn btn-davivienda buttonDisabled">Descargar extracto del mes</a></div><div id="dashboardform:divDetalleMovimientos" class="detalle"><div id="dashboardform:divEncMovimientos" class="input">
 						<div class="title">Seleccione un producto</div>
-					
+
 					<div class="content-select" style="margin-right:10px;">
 						<span class="ico"> <em class="icono flecha-abajo"></em> </span><select id="dashboardform:j_idt274" name="dashboardform:j_idt274" class="select validate" size="1" style="z-index: 10; opacity: 0; width: 250px; -khtml-appearance: none" onchange="mojarra.ab(this,event,'valueChange','@this','dashboardform:spanProductoSeleccionadoDesplega dashboardform:PfmMesesSeleccionados dashboardform:divEncMovimientos dashboardform:divMsgExtracto dashboardform:btnConsultarMovimientos')">	<option value="-1   " selected="selected">---</option>
 	<option value="0550---Cuenta de Ahorros **7582">Cuenta de Ahorros **7582</option>
@@ -506,7 +508,7 @@
 </select><div id="dashboardform:spanProductoSeleccionadoDesplega">
 							<span class="select">---</span></div>
 
-					</div><a id="dashboardform:btnConsultarMovimientos" href="#" onclick="jsf.util.chain(this,event,'gtmEvent(\'Mis Movimientos\',\'Enlace Consultar Interno\',\'Mis Movimientos\')','mojarra.ab(this,event,\'action\',0,\'dashboardform:divExtractoDetalle dashboardform:divControlesExtracto dashboardform:divMsgExtracto dashboardform:divDetalleMovimientos dashboardform:divMsgMovimientos dashboardform:tablaMovimientos dashboardform:btnMasMovimientos dashboardform:btnConsultarMovimientos\',{\'onevent\':mostrarDetalleMovList})');return false" class="btn mas-movimientos consultaMovimientos buttonDisabled"> 
+					</div><a id="dashboardform:btnConsultarMovimientos" href="#" onclick="jsf.util.chain(this,event,'gtmEvent(\'Mis Movimientos\',\'Enlace Consultar Interno\',\'Mis Movimientos\')','mojarra.ab(this,event,\'action\',0,\'dashboardform:divExtractoDetalle dashboardform:divControlesExtracto dashboardform:divMsgExtracto dashboardform:divDetalleMovimientos dashboardform:divMsgMovimientos dashboardform:tablaMovimientos dashboardform:btnMasMovimientos dashboardform:btnConsultarMovimientos\',{\'onevent\':mostrarDetalleMovList})');return false" class="btn mas-movimientos consultaMovimientos buttonDisabled">
 										Consultar
 						</a>
 						<label>Estoy viendo</label>
@@ -526,31 +528,31 @@
 		</div></div>
 
 </div></div>
-        
-        
-        
+
+
+
 </div></div>
 
 
 
-                                 
-</div></div> 
+
+</div></div>
                     </section><div id="dashboardform:panelLogoutCheck"></div><script type="text/javascript" src="DashboardDavivienda_files/hashtable.jsf"></script>
-            	
-            	
-            	            
+
+
+
                 <script type="text/javascript" language="javascript">
                     function enabledScroll(){
                         $('body').css( "overflow", "auto" );
                         $('html').css( "overflow", "auto" );
                     }
-                    	
+
                 </script><a id="dashboardform:goToModule" href="#" style="display:none;" onclick="mojarra.ab(this,event,'action',0,'dashboardform dashboardform:pagepanel dashboardform:navcontainer dashboardform:mainDiv',{'onevent':handleDisableButton,'buttonName':'goToModule','buttonTitle':'goToModule','header':'false'});return false"></a><a id="dashboardform:goToVentaSOAT" href="#" style="display:none;" onclick="mojarra.ab(this,event,'action',0,'dashboardform dashboardform:pagepanel dashboardform:navcontainer dashboardform:mainDiv',{'onevent':handleDisableButton,'buttonName':'ventaSOAT','buttonTitle':'Comprar SOAT','buttonId':'VSOAT_02','idTipo':'230','header':'false'});return false"></a><input id="dashboardform:inicioBiocatch" type="submit" name="dashboardform:inicioBiocatch" value="" style="display:none" onclick="mojarra.ab(this,event,'action',0,0);return false"><input type="hidden" name="javax.faces.ViewState" id="j_id1:javax.faces.ViewState:0" value="-2633217231652169616:-7141951311544568288" autocomplete="off">
 </form>
 <form id="dpform" name="dpform" method="post" action="/transaccional/dashboard/pages/dashboard.jsf" enctype="application/x-www-form-urlencoded">
 <input type="hidden" name="dpform" value="dpform">
 <a id="dpform:valDevicePrint" href="#" style="display:none;" onclick="jsf.util.chain(this,event,'collectInfo();','mojarra.ab(this,event,\'action\',\'dpform\',\'dashboardform:panelLogoutCheck\',{\'onevent\':handleDisableButton})');return false" name="dpform:valDevicePrint"></a><a id="dpform:valDevicePrint2" href="#" style="display:none;" onclick="jsf.util.chain(this,event,'collectInfo();','mojarra.ab(this,event,\'action\',\'dpform\',\'dashboardform:panelLogoutCheck\',{\'onevent\':handleDisableButton})');return false" name="dpform:valDevicePrint2"></a><input id="dpform:todo1RSADevicePrint" type="hidden" name="dpform:todo1RSADevicePrint"><input id="dpform:davDevicePrint" type="hidden" name="dpform:davDevicePrint" value="9984d74c8899deb6e3343a0ade34f0bc">
-				
+
             	<script type="text/javascript" language="javascript">
 					//<![CDATA[
 					jQuery(document).ready(function(){
@@ -559,21 +561,21 @@
                     		parent.OpenBox.loadBUTTON("dpform:valDevicePrint");
                     	}, delayInMilliseconds);
 					});
-					
+
 					$( document ).ajaxComplete(function() {
 						var delayInMilliseconds = 100;
 						setTimeout(function () {
                     		parent.OpenBox.loadBUTTON("dpform:valDevicePrint2");
                     	}, delayInMilliseconds);
-					});	
+					});
 					//]]>
 				</script>
-				
+
 				<script type="text/javascript" language="javascript">
 					//<![CDATA[
 					function collectInfo() {
 						var nomVarDavDevPrint = "dpform:davDevicePrint";
-                    	
+
                     	try{
 						    var options = {excludeWebGL: true, excludeCanvas: true, excludeScreenResolution: true, excludeAvailableScreenResolution: true, excludeAdBlock: true, excludeJsFonts: true,	excludeDoNotTrack: true,	excludeColorDepth: true,	excludeDeviceMemory: true,	excludeTimezoneOffset: true,	excludeSessionStorage: true,	excludeIndexedDB: true,	excludeCpuClass: true,	excludeWebGLVendorAndRenderer: true,	excludePlugins: true,	excludeIEPlugins: true,	excludeTouchSupport: true,	excludeHasLiedResolution: true,	excludeHasLiedOs: true,	excludeHasLiedBrowser: true}
 						    new Fingerprint2(options).get(function (result, components) {
@@ -582,7 +584,7 @@
 						    	}
 						        document.getElementById(nomVarDavDevPrint).value = result;
 						    });
-						    
+
                     	} catch(err){
 							console.log("dashboard Error generating DavDevPrint.");
 							console.log(err);
@@ -602,30 +604,30 @@
             <h1>Davivienda</h1></div>
                 </footer><input type="hidden" name="javax.faces.ViewState" id="j_id1:javax.faces.ViewState:2" value="-2633217231652169616:-7141951311544568288" autocomplete="off">
 </form>
-                            
+
             <div class="modal">
                 <!-- Place at bottom of page before JS -->
                 <div class="textLoader">Procesando...</div>
             </div>
-                            
+
                 <script type="text/javascript">
                 var cargaInicial = true;
 				var cargandoSeguros = false;
-                
+
                     function handleAjax(data) {
                         var status = data.status;
-                        
+
                         switch (status) {
                             case "begin":
                                 // This is the start of the AJAX request.
                                 document.getElementsByTagName('body')[0].className = 'loading';
                                 break;
-                            
+
                             case "complete":
                                 // This is invoked right after AJAX response is returned.
                                 document.getElementsByTagName('body')[0].className = '';
                                 break;
-                            
+
                             case "success":
                                 // This is invoked right after successful processing of AJAX response and update of HTML DOM.
                                 document.getElementsByTagName('body')[0].className = '';
@@ -652,8 +654,8 @@ return;}}
 catch(err){return;}
 setTimeout(f5_cspm.wait_perf_data,100);return;},go:function(){var chunk=window.document.cookie.split(/\s*;\s*/);for(var i=0;i<chunk.length;++i){var pair=chunk[i].split(/\s*=\s*/);if(pair[0]=='f5_cspm'&&pair[1]=='1234')
 {var d=new Date();d.setTime(d.getTime()-1000);window.document.cookie='f5_cspm=;expires='+d.toUTCString()+';path=/;';setTimeout(f5_cspm.wait_perf_data,100);}}}}
-f5_cspm.go();}());</script><script type="text/javascript" id="">var _elqQ=_elqQ||[];_elqQ.push(["elqSetSiteId","1585023691"]);_elqQ.push(["elqTrackPageView"]);(function(){function b(){var a=document.createElement("script");a.type="text/javascript";a.async=!0;a.src="//img03.en25.com/i/elqCfg.min.js";var c=document.getElementsByTagName("script")[0];c.parentNode.insertBefore(a,c)}window.addEventListener?window.addEventListener("DOMContentLoaded",b,!1):window.attachEvent&&window.attachEvent("onload",b)})();</script> 
-<iframe name="__bkframe" style="display:none;position:absolute;clip:rect(0px 0px 0px 0px)" src="about:blank" width="0" height="0" frameborder="0"></iframe> 
-<script type="text/javascript" id="" src="DashboardDavivienda_files/bk-coretag.js"></script> 
+f5_cspm.go();}());</script><script type="text/javascript" id="">var _elqQ=_elqQ||[];_elqQ.push(["elqSetSiteId","1585023691"]);_elqQ.push(["elqTrackPageView"]);(function(){function b(){var a=document.createElement("script");a.type="text/javascript";a.async=!0;a.src="//img03.en25.com/i/elqCfg.min.js";var c=document.getElementsByTagName("script")[0];c.parentNode.insertBefore(a,c)}window.addEventListener?window.addEventListener("DOMContentLoaded",b,!1):window.attachEvent&&window.attachEvent("onload",b)})();</script>
+<iframe name="__bkframe" style="display:none;position:absolute;clip:rect(0px 0px 0px 0px)" src="about:blank" width="0" height="0" frameborder="0"></iframe>
+<script type="text/javascript" id="" src="DashboardDavivienda_files/bk-coretag.js"></script>
 <script type="text/javascript" id="">bk_addPageCtx("day_of_week","5");bk_addPageCtx("month_of_year","August");bk_addPageCtx("utm_source","undefined");bk_addPageCtx("utm_medium","undefined");bk_addPageCtx("utm_campaign","undefined");bk_addPageCtx("utm_content","undefined");bk_addPageCtx("utm_term","undefined");bk_doJSTag(42488,1);</script>
 </body></html>
