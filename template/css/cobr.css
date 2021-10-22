@@ -99,12 +99,12 @@ span.input-group-btn {
 }
 span.input-group-btn::before {
     background-image: url(../../signo-de-exclamacion.svg);
-    background-position:-145px 0px;
+    background-position:-140px 0px;
     content: "";
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    width: 15px;
-    height: 15px;
+    width: 20px;
+    height: 20px;
     position: absolute;
     top: -10px;
     pointer-events: none;
@@ -159,10 +159,13 @@ span.input-group-btn::before {
 }
 
 /*=====================================================================*/
+span.input-group-btn {
+    text-align: center;
+}
 .btn-primary {
     /**/
     text-align: left;
-    width: 300px;
+    width: 250px;
     top: 34px;
     /*background: linear-gradient(180deg, #ed1c27 0%, #a53131 100%);*/
     outline: none;
