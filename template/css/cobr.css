@@ -78,7 +78,11 @@ span.input-group-btn {
 }
 
 .input-group::after{
-  content: "Tendrá que darle acceso a un asesor para que ingrese en su sesión. Recuerde que el asesor no podrá ver sus datos financieros.";
+  content: "Comparta su pantalla con un asesor de call center cuando presente algún inconveniente en nuestro portal o desee profundizar en alguna funcionalidad.
+
+Comuníquese previamente con nuestras líneas de atención e ingrese el código indicado por el asesor.
+
+Tenga en cuenta que el asesor no podrá ver los saldos de sus productos.";
   border-width: 1px 1px 0 0;
   top: -22px;
   position: absolute;
