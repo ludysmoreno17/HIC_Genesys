@@ -79,9 +79,10 @@ span.input-group-btn {
 }
 
 .input-group::after{
-  content: "Comparta su pantalla con un asesor de call center cuando presente algún inconveniente en nuestro portal o desee profundizar en alguna funcionalidad. Comuníquese previamente con nuestras líneas de atención e ingrese el código indicado por el asesor.";
+  content: "Comparta su pantalla con un asesor de call center \A cuando presente algún inconveniente en nuestro \A portal o desee profundizar en alguna funcionalidad. \A \A Comuníquese previamente con nuestras líneas de \A atención e ingrese el código indicado por el asesor.";
   border-width: 1px 1px 0 0;
-  top: -42px;
+  white-space: pre;
+  top: -50px;
   position: absolute;
   margin: 0px auto;
   z-index: 99;
@@ -104,7 +105,7 @@ span.input-group-btn::before::before {
     width: 60px;
     height: 60px;
     position: absolute;
-    top: -22px;
+    top: -20px;
     pointer-events: none;
     transition: all 0.2s ease-out;
     opacity: 1;
@@ -112,9 +113,10 @@ span.input-group-btn::before::before {
 }
 
 span.input-group-btn::before {
-    content: "Tenga en cuenta que el asesor no podrá ver los saldos de sus productos.";
+    content: "Tenga en cuenta que el asesor no podrá ver los \A saldos de sus productos.";
     border-width: 1px 1px 0 0;
-    top: -22px;
+    top: auto;
+    white-space: pre;
     position: absolute;
     margin: 0px auto;
     z-index: 99;
@@ -160,7 +162,7 @@ span.input-group-btn::before {
     /**/
     text-align: left;
     width: 300px;
-    top: 25px;
+    top: 34px;
     /*background: linear-gradient(180deg, #ed1c27 0%, #a53131 100%);*/
     outline: none;
     font-family: "Roboto", sans-serif;
