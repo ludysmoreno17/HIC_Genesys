@@ -159,10 +159,13 @@ span.input-group-btn::before {
 }
 
 /*=====================================================================*/
+span.input-group-btn {
+    text-align: center;
+}
 .btn-primary {
     /**/
     text-align: left;
-    width: 300px;
+    width: 250px;
     top: 34px;
     /*background: linear-gradient(180deg, #ed1c27 0%, #a53131 100%);*/
     outline: none;
