@@ -113,7 +113,7 @@ span.input-group-btn::before {
     pointer-events: none;
 }
 
-span.input-group-btn::after {
+span.input-group-btn::before {
     content: "Tenga en cuenta que el asesor no podrá ver los \A saldos de sus productos.";
     border-width: 1px 1px 0 0;
     top: auto;
