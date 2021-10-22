@@ -1,13 +1,13 @@
 /*estilos del cobrowse*/
 * {
-  margin:0; 
+  margin:0;
   padding: 0;
   box-sizing: border-box;
- 
+
 }
 body
 {
-  margin:0; 
+  margin:0;
   padding: 0;
 
   max-width: 1600px;
@@ -78,7 +78,7 @@ span.input-group-btn {
 }
 
 .input-group::after{
-  content: "Comparta su pantalla con un asesor de call center cuando presente algún inconveniente en nuestro portal o desee profundizar en alguna funcionalidad. Comuníquese previamente con nuestras líneas de atención e ingrese el código indicado por el asesor. Tenga en cuenta que el asesor no podrá ver los saldos de sus productos.";
+  content: "Comparta su pantalla con un asesor de call center cuando presente algún inconveniente en nuestro portal o desee profundizar en alguna funcionalidad. Comuníquese previamente con nuestras líneas de atención e ingrese el código indicado por el asesor.";
   border-width: 1px 1px 0 0;
   top: -22px;
   position: absolute;
@@ -95,7 +95,25 @@ span.input-group-btn {
   font-style: normal;
   color: #404040;
 }
-
+span.input-group-btn::before {
+    content: "Tenga en cuenta que el asesor no podrá ver los saldos de sus productos.";
+    /* color: black; */
+    /* font-size: 10px; */
+    position: absolute;
+    /* margin: 0px auto; */
+    z-index: 99;
+    /* display: inline-block; */
+    width: 100%;
+    /* margin: 0; */
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+    /* line-height: 14px; */
+    /* font-weight: 400; */
+    text-align: center;
+    font-style: normal;
+    color: #404040;
+    /* display: inline-block; */
+}
 .start-section{
   margin-top: 170px;
   position: relative;
@@ -124,7 +142,7 @@ span.input-group-btn {
 
 /*=====================================================================*/
 .btn-primary {
-    /**/  
+    /**/
     text-align: left;
     width: 300px;
     /*background: linear-gradient(180deg, #ed1c27 0%, #a53131 100%);*/
