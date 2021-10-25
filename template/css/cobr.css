@@ -156,7 +156,15 @@ span.input-group-btn::before {
 .webchat-security-key-form .start-section .error-section{
   top: 120px;
   font-family: "Roboto", sans-serif;
+  font-size: 0;
 }
+.webchat-security-key-form .start-section .error-section::before{
+  content:"hola";
+  font-size:20px;
+  font-family: "Roboto", sans-serif;
+}
+
+
 
 /*=====================================================================*/
 span.input-group-btn {
