@@ -16,7 +16,7 @@
 {
     /*con este se modifica la caja del co-browse*/
     max-width: 1600px;
-    width: 100%;
+    width: 90%;
     border: 0px;
 	height: 500px;
 
@@ -149,7 +149,7 @@ button{
 	font-family: 'Montserrat', sans-serif;
 	padding: 20px;
 	text-align: center;
-	width: 600px;
+	width: 500px;
 
 	transition: .3s ease all;
 	transform: scale(0.7);
