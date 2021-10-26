@@ -161,7 +161,19 @@ span.input-group-btn::before {
 .webchat-security-key-form .start-section .error-section::before{
   content:"hola";
   font-size:20px;
+  animation-name: mianimacion;
+  
+  animation-duration: 5s;
+  
   font-family: "Roboto", sans-serif;
+}
+@keyframe mianimacion {
+  0%{
+    opacity: 1;
+  }
+  0%{
+    opacity: 0;
+  }
 }
 
 
