@@ -40,6 +40,67 @@
     <iframe src="https://richardsuan.github.io/prueba_dav/template/chatFrame.html" id="miframe" height="400" width="600" name="demo">
       <p>Su navegador no es compatible con iframes</p>
     </iframe>
+    <script type="text/javascript" charset="utf-8">
+        const iframeSrc = "https://richardsuan.github.io/prueba_dav/template/chatFrame.html";
+        var hourLabel = document.getElementById("hour");
+        var minutesLabel = document.getElementById("minutes");
+        var secondsLabel = document.getElementById("seconds");
+        var contenedor = "iframe";
+
+        var lastMsgDate = new Date();
+        lastMsgDate.setDate(lastMsgDate.getDate() + 1);
+
+        function messageCallBack(params) {
+            console.log(" --------------- messageCallBack -----------------");
+            console.log(params);
+
+            let currentdate = new Date();
+            lastMsgDate = currentdate;
+
+            hourLabel.innerHTML = pad(currentdate.getHours());
+            minutesLabel.innerHTML = pad(currentdate.getMinutes());
+            secondsLabel.innerHTML = pad(currentdate.getSeconds());
+        }
+
+
+        function setTime() {
+            let currentdate = new Date();
+            let ElapsedTime = currentdate - lastMsgDate;
+            if (ElapsedTime / 1000 > 30) // mas de 30 segundos de inactividad
+            {
+                console.log("------- setTime :: enviando notifiacion por inactividad ------");
+                lastMsgDate.setDate(lastMsgDate.getDate() + 1);
+                var ifrm = document.getElementById("frameDemo");
+                ifrm.contentWindow.postMessage('alertaInactividad', '*');
+            }
+            let tinactivo = document.getElementById("tinactivo");
+            let segundos = Math.trunc(ElapsedTime / 1000);
+            tinactivo.innerHTML = segundos >= 0 ? segundos : 0;
+        }
+
+        function pad(val) {
+            var valString = val + "";
+            if (valString.length < 2) {
+                return "0" + valString;
+            } else {
+                return valString;
+            }
+        }
+
+        document.addEventListener('readystatechange', event => {
+            // When HTML/DOM elements are ready:
+            if (event.target.readyState === "interactive") {
+                document.getElementById('frameDemo').src = iframeSrc;
+                setInterval(setTime, 1000);
+            }
+        });
+
+        //-----------------------  eventos con  addEventListener    
+        window.addEventListener("message", (event) => {
+            console.log("-----  envento recibo del child ----");
+            messageCallBack(event.data);
+        }, false);
+    </script>
 
 
 
