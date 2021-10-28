@@ -48,12 +48,14 @@
                     function(o) {},
                 );
                 boton.innerHTML = "Ocultar Chat";
+                boton.style.fontSize = 0;
 
             } else {
                 Genesys("command", "Messenger.close", {},
                     function(o) {},
                 );
                 boton.innerHTML = "Mostrar Chat";
+                boton.style.fontSize = 0;
             }
 
         }
