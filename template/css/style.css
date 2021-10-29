@@ -12,13 +12,19 @@
     margin: auto;
     display: none;
 }
+#cobrowse-security-form{
+	position:relative;
+	top:auto;
+	left:-20
+}
 .webchat-frame2
 {
     /*con este se modifica la caja del co-browse*/
-    max-width: 1600px;
-    width: 90%;
+    max-width: 400px;
+    
     border: 0px;
-	height: 500px;
+	
+	max-height:500px;
 
 
 }
