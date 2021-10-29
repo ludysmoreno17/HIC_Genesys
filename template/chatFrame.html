@@ -1,49 +1,159 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
+
 <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="./css/style.css" rel="stylesheet" type="text/css"/>
-    <title>davivienda</title>
-    <script>
-        (function (g, e, n, es, ys) {
-      
-          g['_genesysJs'] = e;
-      
-          g[e] = g[e] || function () {
-      
-            (g[e].q = g[e].q || []).push(arguments)
-      
-          };
-      
-          g[e].t = 1 * new Date();
-      
-          g[e].c = es;
-      
-          ys = document.createElement('script'); ys.async = 1; ys.src = n; ys.charset = 'utf-8'; document.head.appendChild(ys);
-      
+
+    <script type="text/javascript" charset="utf-8">
+        (function(g, e, n, es, ys) {
+            g['_genesysJs'] = e;
+            g[e] = g[e] || function() {
+                (g[e].q = g[e].q || []).push(arguments)
+            };
+            g[e].t = 1 * new Date();
+            g[e].c = es;
+            ys = document.createElement('script');
+            ys.async = 1;
+            ys.src = n;
+            ys.charset = 'utf-8';
+            document.head.appendChild(ys);
         })(window, 'Genesys', 'https://apps.mypurecloud.com/genesys-bootstrap/genesys.min.js', {
-      
-          environment: 'use1',
-      
-          deploymentId: 'bf6fa774-e669-424d-9c20-f4478b3a5646'
-      
+            environment: 'use1',
+            deploymentId: 'bf6fa774-e669-424d-9c20-f4478b3a5646'
         });
-      
-        function toggleMessenger(){
-            console.log("hola");
-            Genesys("command", "Messenger.open", {},
-            function(o){},  // if resolved
-            function(o){    // if rejected
-                Genesys("command", "Messenger.close");
+
+        Genesys("subscribe", "Launcher.ready", function(o) {
+            var boton = document.getElementById("toggle");
+            boton.className = "toggleVisible";
+        });
+
+        Genesys("subscribe", "Conversations.started", function(o) {
+            console.log("******* Conversations.started*******");
+            enviarAParent("Conversations.started");
+        });
+        Genesys("subscribe", "Conversations.messageAdded", function(o) {
+            console.log("*******Conversations.messageAdded*******");
+            enviarAParent("Conversations.messageAdded");
+            console.log(o);
+        });
+        Genesys("subscribe", "MessagingService.messagesReceived", function(o) {
+            console.log("*******MessagingService.messagesReceived*******");
+            enviarAParent("MessagingService.messagesReceived");
+        });
+
+        function ToggleWidget() {
+
+            var boton = document.getElementById("toggle");
+            if (boton.innerHTML == "Mostrar Chat") {
+                Genesys("command", "Messenger.open", {},
+                    function(o) {},
+                );
+                boton.innerHTML = "Ocultar Chat";
+                boton.style.fontSize = 0;
+                boton.style.visibility = "hidden";
+
+            } else {
+                Genesys("command", "Messenger.close", {},
+                    function(o) {},
+                );
+                boton.innerHTML = "Mostrar Chat";
+                boton.style.fontSize = 0;
+                boton.style.visibility = "hidden";
             }
-            );
+
         }
-      </script>
-    
-    <script src="https://cobrowse.mypurecloud.com/cobrowse-jsapi-v1.js?deploymentKey=FHr7VCu9k6sTcRzjmFil64Gf6s816X1v" type="text/javascript"></script>
+
+        function enviarAParent(msgEnviar) {
+
+            var domain = 'file://';
+            const messageObj = {
+                message: msgEnviar
+            };
+            const stringifiedMessageObj = JSON.stringify(messageObj);
+            parent.postMessage(stringifiedMessageObj, domain);
+            console.log('evento enviado al contenedor');
+
+        }
+
+        window.addEventListener("message", (event) => {
+            //console.log(event);
+            //console.log(event.data);
+            if (typeof event.data === 'string') {
+                if (event.data == "alertaInactividad") {
+                    console.log("----- recibido mensaje del contenedor ----");
+                    alertaInactividad();
+                }
+            }
+
+        });
+
+        function alertaInactividad() {
+            var notificaciones = document.getElementById("notificaciones");
+            notificaciones.innerHTML = "**** Alerta por inactividad ****";
+            setTimeout(function() {
+                notificaciones.innerHTML = "-";
+            }, 5000);
+        }
+
+        document.addEventListener('readystatechange', event => {
+            // When HTML/DOM elements are ready:
+            if (event.target.readyState === "interactive") {
+                //alert("hi 1");
+                console.log("--- readystatechange --- ");
+                console.log(window.location);
+                console.log(window.parent.location);
+                enviarAParent("pagina cargada");
+            }
+            // When window loaded ( external resources are loaded too- `css`,`src`, etc...) 
+            if (event.target.readyState === "complete") {
+                //alert("hi 2");
+            }
+        });
+
+        function Abrir() {
+            Genesys('command', 'Messenger.open', {}, function(o) {}, );
+            console.log("abrir");
+        }
+    </script>
+
+    <style>
+        .toggleOculto {
+            display: none;
+        }
+        
+        .toggleVisible {
+            display: block;
+        }
+        
+        .div1 {
+            padding-top: 1%;
+            padding-bottom: 1%;
+            padding-left: 1%;
+        }
+    </style>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>ethack - The Ethical Hacking Company</title>
 </head>
-<body>
-  
+
+<body onload="Abrir()">
+    <!-- Messenger Snipp Start -->
+
+    <!-- Messenger Snipp End -->
+
+    <div class="div1">
+        <button id="toggle" class="toggleOculto" onclick="ToggleWidget()" onload="ToggleWidget()" style="height:0px;width:0px;font-size: 0;">Mostrar Chat</button>
+    </div>
+    <div class="div1">
+        <label id="notificaciones"></label>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
 </body>
-</html> 
+
+</html>
