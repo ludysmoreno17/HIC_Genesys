@@ -15,8 +15,8 @@
 
 #cobrowse-security-form {
     position: relative;
-    top: auto;
-    left: -20;
+    top: -35px;
+    left: -20px;
 }
 
 .webchat-frame2 {
@@ -157,7 +157,8 @@ button {
     font-family: 'Montserrat', sans-serif;
     padding: 20px;
     text-align: center;
-    width: 500px;
+    width: 450px;
+    height: 490px;
     transition: .3s ease all;
     transform: scale(0.7);
     opacity: 0;
