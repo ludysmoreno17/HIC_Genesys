@@ -7,7 +7,7 @@
 
 .webchat-frame {
     /*con este se modifica la caja del co-browse*/
-    height: 500px;
+    height: 550px;
     width: 100%;
     margin: auto;
     display: none;
@@ -17,13 +17,14 @@
     position: relative;
     top: -35px;
     left: -20px;
+    height: 490px;
 }
 
 .webchat-frame2 {
     /*con este se modifica la caja del co-browse*/
     max-width: 400px;
     border: 0px;
-    max-height: 500px;
+    max-height: 550px;
 }
 
 .titulo {
