@@ -56,7 +56,7 @@ span.input-group-btn {
     content: "¿Desea iniciar la asistencia remota?";
     border-width: 1px 1px 0 0;
     top: -74px;
-    position: absolute;
+    position: relative;
     margin: 0px auto;
     z-index: 99;
     display: inline-block;
@@ -75,7 +75,7 @@ span.input-group-btn {
     content: "Comparta su pantalla con un asesor de call center \A cuando presente algún inconveniente en nuestro \A portal o desee profundizar en alguna funcionalidad. \A \A Comuníquese previamente con nuestras líneas de \A atención e ingrese el código indicado por el asesor.";
     border-width: 1px 1px 0 0;
     white-space: pre;
-    top: -50px;
+    top: -35px;
     position: absolute;
     margin: 0px auto;
     z-index: 99;
