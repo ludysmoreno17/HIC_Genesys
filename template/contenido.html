@@ -20,6 +20,10 @@
     CobrowseIO.license = "8tVUclEjaBXUWw";
     //CobrowseIO.license = "hN3jxzqAuYIKrA";
     CobrowseIO.client().then(function(){
+      CobrowseIO.trustedOrigins = [
+          'https://richardsuan.github.io/prueba_dav/template/contenido.html', // parent origin to trust
+          'https://richardsuan.github.io/prueba_dav/index.html' // another parent origin to trust
+      ];
         CobrowseIO.start();
     });
 </script>
