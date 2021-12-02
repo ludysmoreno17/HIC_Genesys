@@ -48,7 +48,7 @@
     <p>Su navegador no es compatible con iframes</p>
     </iframe>
             <br>
-		
+
             <p class="cobrowse-masked" >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum, tortor ut commodo elementum, felis dui pharetra arcu, id vulputate neque orci ut velit. Vestibulum facilisis mauris sapien, ut rutrum lacus sollicitudin eu. Curabitur odio ligula,
                 eleifend sodales nisl et, feugiat mattis sapien. Nulla commodo gravida est a lacinia. Fusce cursus eleifend dui at tincidunt. Aliquam eu metus odio. Morbi metus erat, mattis sit amet ultricies ullamcorper, dignissim nec ante. Nulla congue
@@ -83,6 +83,16 @@
                 <script src="https://cobrowse.mypurecloud.com/cobrowse-jsapi-v1.js?deploymentKey=zvt5oJqVEzO2oerI32veMCgcRsc8xeT8" type="text/javascript"></script>
                 <!-- la linea de arriba se debe poner en las diferentes paginas  que se van a usar-->
                 <script type="text/javascript">
+                    //
+                    CobrowseIO.trustedOrigins = [
+                        'https://richardsuan.github.io/prueba_dav/template/contenido.html', // parent origin to trust
+                        'https://richardsuan.github.io/prueba_dav/index.html' // another parent origin to trust
+                    ];
+                    CobrowseIO.start();
+                    //
+
+
+
                     let intervalID;
                     let genesysWebchat = (function() {
 
