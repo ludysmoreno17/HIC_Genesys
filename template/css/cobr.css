@@ -92,7 +92,7 @@ span.input-group-btn {
 }
 
 span.input-group-btn::before {
-    background-image: url(../../signo-de-exclamacion.svg);
+    //background-image: url(../../signo-de-exclamacion.svg);
     background-position: -140px 0px;
     content: "";
     background-repeat: no-repeat;
