@@ -47,7 +47,7 @@ span.input-group-btn {
     font-style: normal;
     color: #404040;
     transition-duration: .2s;
-    margin-top: 43px;
+    margin-top: 50px;
 }
 
 .input-group {}
@@ -171,7 +171,7 @@ span.input-group-btn {
     /**/
     text-align: left;
     width: 250px;
-    top: 50px;
+    top: 20px;
     /*background: linear-gradient(180deg, #ed1c27 0%, #a53131 100%);*/
     outline: none;
     font-family: "Roboto", sans-serif;
