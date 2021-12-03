@@ -108,7 +108,7 @@ span.input-group-btn::before {
 }
 
 span.input-group-btn::before {
-    content: "Tenga en cuenta que el asesor no podrá \A ver los saldos de sus productos.";
+    //content: "Tenga en cuenta que el asesor no podrá \A ver los saldos de sus productos.";
     border-width: 1px 1px 0 0;
     top: auto;
     white-space: pre;
