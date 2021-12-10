@@ -103,7 +103,7 @@
                 console.log(window.parent.location);
                 enviarAParent("pagina cargada");
             }
-            // When window loaded ( external resources are loaded too- `css`,`src`, etc...) 
+            // When window loaded ( external resources are loaded too- `css`,`src`, etc...)
             if (event.target.readyState === "complete") {
                 //alert("hi 2");
             }
@@ -119,11 +119,11 @@
         .toggleOculto {
             display: none;
         }
-        
+
         .toggleVisible {
             display: block;
         }
-        
+
         .div1 {
             padding-top: 1%;
             padding-bottom: 1%;
@@ -153,6 +153,46 @@
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+    <div class="contenedor_pop">
+        <article>
+            <h1>Ventana Emergente </h1>
+            <button id="btn-abrir-popup" class="btn-abrir-popup" onclick="genesysWebchat.startCobrowse()">Abrir Ventana Emergente</button>
+
+            <br>
+            <br>
+            <br>
+            <iframe src="https://richardsuan.github.io/prueba_dav/template/contenido.html" id="miframe" height="400" width="500" name="demo">
+        <p>Su navegador no es compatible con iframes</p>
+        </iframe>
+        <br>
+        <br>
+        <iframe src="./template/Chat.html" id="miframe" height="400" width="500" name="demo">
+    <p>Su navegador no es compatible con iframes</p>
+    </iframe>
+            <br>
+
+            <p class="cobrowse-masked" >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum, tortor ut commodo elementum, felis dui pharetra arcu, id vulputate neque orci ut velit. Vestibulum facilisis mauris sapien, ut rutrum lacus sollicitudin eu. Curabitur odio ligula,
+                eleifend sodales nisl et, feugiat mattis sapien. Nulla commodo gravida est a lacinia. Fusce cursus eleifend dui at tincidunt. Aliquam eu metus odio. Morbi metus erat, mattis sit amet ultricies ullamcorper, dignissim nec ante. Nulla congue
+                purus quis interdum tincidunt. Nam at libero leo. Nunc dignissim auctor turpis sit amet ornare. Duis vulputate faucibus sem id dignissim. Vivamus sed orci odio. Maecenas nec dapibus mauris. Pellentesque a massa et lectus volutpat gravida
+                eget id neque.
+            </p>
+            <p class="mascara">
+                Nunc eleifend venenatis est vel finibus. Mauris vel arcu sit amet risus vulputate gravida a pulvinar felis. In nulla turpis, dignissim ac orci sit amet, suscipit luctus eros. Ut luctus blandit mi. Donec lacinia vehicula fringilla. Vivamus nec ligula ut
+                dui vestibulum iaculis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras ac sem in mi pulvinar eleifend vitae in sapien. Mauris vel dui nibh. Maecenas fermentum ante cursus nisi tincidunt
+                mattis. Phasellus quis sapien sollicitudin, tempor diam nec, ullamcorper sapien.
+            </p>
+            <p>
+                Fusce tempor arcu nec ante congue, nec tempor ipsum eleifend. Pellentesque consequat ac ipsum et euismod. Donec posuere massa in felis scelerisque feugiat. Mauris id arcu enim. Curabitur pulvinar elit nec turpis mollis tincidunt. Curabitur lectus elit,
+                scelerisque nec facilisis ac, semper vel libero. Pellentesque efficitur velit nunc, eu vehicula est pretium quis. Nunc urna tellus, tempus vitae eros eget, efficitur molestie lorem. Phasellus ut facilisis libero. Mauris laoreet libero
+                diam, a tempor risus pharetra eget. Mauris nibh urna, accumsan vel accumsan euismod, lobortis nec lectus. Mauris elementum urna vel feugiat ultrices. Nulla sodales nisl sit amet ante fermentum, sit amet porttitor diam sollicitudin. Pellentesque
+                ut pellentesque turpis. In rutrum augue dui, vel molestie ipsum pulvinar facilisis.
+            </p>
+        </article>
+
+
+    </div>
 
 </body>
 
