@@ -53,8 +53,8 @@ function Consent() {
           <div style="text-align:center; margin-top:10px; margin-bottom:20px"><b>'+title+'</b></div>\
           <div>'+description+'</div>\
           <div style="float:right; margin-top:40px; color:rgb(0, 122, 255);">\
-            <a class="cobrowse-deny" style="cursor:pointer; padding:10px;">Deny</a>\
-            <a class="cobrowse-allow" style="cursor:pointer; padding:10px; font-weight: bold;">Allow</a>\
+            <a class="cobrowse-deny" style="cursor:pointer; padding:10px;">Denegar</a>\
+            <a class="cobrowse-allow" style="cursor:pointer; padding:10px; font-weight: bold;">Aceptar</a>\
           </div>\
         </div>\
       </div>\
@@ -64,8 +64,11 @@ function Consent() {
   this.show = function(title, description) {
     return new Promise(function(resolve) {
       container.innerHTML = content(title, description);
+
       container.querySelector('.cobrowse-allow').addEventListener('click', function(){ resolve(true); this.hide() }.bind(this));
+
       container.querySelector('.cobrowse-deny').addEventListener('click', function(){ resolve(false); this.hide() }.bind(this));
+
       if (document.body) document.body.appendChild(container);
     }.bind(this));
   }.bind(this);
@@ -79,7 +82,7 @@ function Consent() {
 
 // Integration with Cobrowse
 CobrowseIO.confirmSession = function() {
-    return new Consent().show('Sessioooooon Request', 'Do you want to share your screeeeeeen?');
+    return new Consent().show('Asistencia remota', '¿Quiere compartir pantalla?');
 }
 
 </script>
