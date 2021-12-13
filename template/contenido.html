@@ -143,18 +143,19 @@
             <div class="popup" id="popup">
                 <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
                 <img id="LogoAsistenciaRemota" src="../Icon-popUp-info.svg" alt="insertar SVG con la etiqueta image">
-                <p>¿Desea iniciar la asistencia remota?</p>
-                <p>
+                <p class="titulos">¿Desea iniciar la asistencia remota?</p>
+                <p class="textos">
                   Comparta su pantalla con un asesor de call center  cuando presente algún inconveniente en nuestro  portal o desee profundizar en alguna funcionalidad.
                 </p>
-                <p>
+                <br> 
+                <p class="textos">
                   Comuníquese previamente con nuestras líneas de  atención e ingrese el código indicado por el asesor.
                 </p>
 
                 <p id="codigo">
                     -
                 </p>
-                <button onclick="CrearCodigo()" type="button">Generar codigo</button>
+                <button onclick="CrearCodigo()" type="button" id="boton">Generar codigo</button>
             </div>
         </div>
       </article>
