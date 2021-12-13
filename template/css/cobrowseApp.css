@@ -32,8 +32,8 @@
 }
 .textos{
    border-width: 1px 1px 0 0;
-    white-space: pre;
-    position: absolute;
+    //white-space: pre;
+    //position: absolute;
     margin: 0px auto;
     z-index: 99;
     display: inline-block;
