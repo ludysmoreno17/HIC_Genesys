@@ -1,0 +1,14 @@
+#LogoAsistenciaRemota {
+
+
+  
+    background-size: 100% 100%;
+    width: 60px;
+    height: 60px;
+    position: relative;
+
+    pointer-events: none;
+    transition: all 0.2s ease-out;
+    opacity: 1;
+    pointer-events: none;
+}
