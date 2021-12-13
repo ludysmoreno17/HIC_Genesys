@@ -66,3 +66,12 @@
 #boton:focus {
     background: linear-gradient(180deg, #ff000d 0%, #ff000d 100%);
 }
+#boton > span{
+  font-family: "Roboto", sans-serif;
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 400;
+    text-align: center;
+    font-style: normal;
+    color: #FFFFFF;
+}
