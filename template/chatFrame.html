@@ -113,6 +113,30 @@
             Genesys('command', 'Messenger.open', {}, function(o) {}, );
             console.log("abrir");
         }
+        function BntInciarChat()
+        {
+        console.log ("-- BntInciarChat :: Inicio ---");
+        if (!ConversationOpened){
+            Genesys("command", "Messenger.open", {  },      function(o){},      );
+        }
+
+        let vemail = document.getElementById("CC").value;
+
+        console.log("-- BntInciarChat ::  --- email ::" + vemail + " // vAcepta :: " + vAcepta );
+
+        Genesys("command", "Database.set", {
+                  messaging : {
+                    customAttributes: {
+                      "CC"     : vemail
+
+                    }
+                  }
+                });
+
+          let boton = document.getElementById("toggle");
+          boton.innerHTML = "Ocultar Chat";
+            console.log ("-- BntInciarChat :: Fin ---");
+        }
     </script>
 
     <style>
@@ -144,9 +168,11 @@
     <!-- Messenger Snipp Start -->
 
     <!-- Messenger Snipp End -->
-
+    <input type="text" id="CC">
+    <button  onclick=" BntInciarChat()"  style="height:0px;width:0px;font-size: 0;">sendMessage</button>
+    <br>
     <div class="div1">
-        <button id="toggle" class="toggleOculto" onclick="ToggleWidget()" onload="ToggleWidget()" style="height:0px;width:0px;font-size: 0;">Mostrar Chat</button>
+        <button id="toggle" class="toggleOculto" onclick="ToggleWidget(); BntInciarChat()" onload="ToggleWidget()" style="height:0px;width:0px;font-size: 0;">Mostrar Chat</button>
     </div>
     <div class="div1">
         <label id="notificaciones"></label>
