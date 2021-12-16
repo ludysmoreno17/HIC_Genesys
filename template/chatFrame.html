@@ -116,9 +116,9 @@
         function BntInciarChat()
         {
         console.log ("-- BntInciarChat :: Inicio ---");
-        if (!ConversationOpened){
+        
             Genesys("command", "Messenger.open", {  },      function(o){},      );
-        }
+
 
         let vemail = document.getElementById("CC").value;
 
