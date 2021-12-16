@@ -18,7 +18,7 @@
             document.head.appendChild(ys);
         })(window, 'Genesys', 'https://apps.mypurecloud.com/genesys-bootstrap/genesys.min.js', {
             environment: 'use1',
-            deploymentId: '4826e24f-58e6-4c7f-935d-fae4af49377a'
+            deploymentId: '36c8f98c-a138-4450-8672-809a9f196137'
         });
 
         Genesys("subscribe", "Launcher.ready", function(o) {
@@ -39,7 +39,7 @@
             console.log("*******MessagingService.messagesReceived*******");
             enviarAParent("MessagingService.messagesReceived");
         });
-
+        Genesys("command", "Database.set", { messaging: { customAttributes: { cc: '12345' }}});
         function ToggleWidget() {
 
             var boton = document.getElementById("toggle");
@@ -103,7 +103,7 @@
                 console.log(window.parent.location);
                 enviarAParent("pagina cargada");
             }
-            // When window loaded ( external resources are loaded too- `css`,`src`, etc...) 
+            // When window loaded ( external resources are loaded too- `css`,`src`, etc...)
             if (event.target.readyState === "complete") {
                 //alert("hi 2");
             }
@@ -119,11 +119,11 @@
         .toggleOculto {
             display: none;
         }
-        
+
         .toggleVisible {
             display: block;
         }
-        
+
         .div1 {
             padding-top: 1%;
             padding-bottom: 1%;
