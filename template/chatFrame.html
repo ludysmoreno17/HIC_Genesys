@@ -124,7 +124,7 @@
 
           let tipoIdentificacion = document.getElementById("tipoIdentificacion").value;
           let Identificacion = document.getElementById("Identificacion").value;
-          console.log("-- BntInciarChat ::  --- email ::" + tipoIdentificacion + " // vAcepta :: " + Identificacion );
+            console.log(tipoIdentificacion + "     " + Identificacion );
 
           Genesys("command", "Database.set", {
                     messaging : {
@@ -180,7 +180,7 @@
 
     <br>
     <div class="div1">
-        <button disabled="true" id="toggle" class="toggleOculto" onclick="ToggleWidget();"   >Mostrar Chat</button>
+        <button disabled id="toggle" class="toggleOculto" onclick="ToggleWidget();"   >Mostrar Chat</button>
     </div>
     <div class="div1">
         <label id="notificaciones"></label>
