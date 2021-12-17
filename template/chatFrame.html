@@ -40,7 +40,7 @@
             console.log("*******MessagingService.messagesReceived*******");
             enviarAParent("MessagingService.messagesReceived");
         });
-        Genesys("command", "Database.set", { messaging: { customAttributes: { cc: '12345' }}});
+
         function ToggleWidget() {
 
             var boton = document.getElementById("toggle");
@@ -136,11 +136,11 @@
                   });
 
             let boton = document.getElementById("toggle");
-            boton.innerHTML = "Ocultar Chat";
-              console.log ("-- BntInciarChat :: Fin ---");
 
-            const button = document.querySelector('toggle');
-            button.disabled = true;
+
+
+
+            boton.disabled = false;
 
           }
     </script>
@@ -180,7 +180,7 @@
 
     <br>
     <div class="div1">
-        <button disabled="disabled" id="toggle" class="toggleOculto" onclick="ToggleWidget();"   >Mostrar Chat</button>
+        <button disabled="true" id="toggle" class="toggleOculto" onclick="ToggleWidget();"   >Mostrar Chat</button>
     </div>
     <div class="div1">
         <label id="notificaciones"></label>
