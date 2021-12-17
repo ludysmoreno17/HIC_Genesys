@@ -4,6 +4,7 @@
 <head>
 
     <script type="text/javascript" charset="utf-8">
+
         (function(g, e, n, es, ys) {
             g['_genesysJs'] = e;
             g[e] = g[e] || function() {
@@ -113,30 +114,35 @@
             Genesys('command', 'Messenger.open', {}, function(o) {}, );
             console.log("abrir");
         }
+
         function BntInciarChat()
-        {
-        console.log ("-- BntInciarChat :: Inicio ---");
-        
-            Genesys("command", "Messenger.open", {  },      function(o){},      );
+          {
+          console.log ("-- BntInciarChat :: Inicio ---");
+
+          Genesys("command", "Messenger.open", {  },      function(o){},      );
 
 
-        let vemail = document.getElementById("CC").value;
+          let tipoIdentificacion = document.getElementById("tipoIdentificacion").value;
+          let Identificacion = document.getElementById("Identificacion").value;
+          console.log("-- BntInciarChat ::  --- email ::" + vemail + " // vAcepta :: " + vAcepta );
 
-        console.log("-- BntInciarChat ::  --- email ::" + vemail + " // vAcepta :: " + vAcepta );
-
-        Genesys("command", "Database.set", {
-                  messaging : {
-                    customAttributes: {
-                      "CC"     : vemail
-
+          Genesys("command", "Database.set", {
+                    messaging : {
+                      customAttributes: {
+                        "sIdentificacion"     : Identificacion,
+                        "sTipoIdentificacion"    : tipoIdentificacion
+                      }
                     }
-                  }
-                });
+                  });
 
-          let boton = document.getElementById("toggle");
-          boton.innerHTML = "Ocultar Chat";
-            console.log ("-- BntInciarChat :: Fin ---");
-        }
+            let boton = document.getElementById("toggle");
+            boton.innerHTML = "Ocultar Chat";
+              console.log ("-- BntInciarChat :: Fin ---");
+
+            const button = document.querySelector('toggle');
+            button.disabled = true;
+
+          }
     </script>
 
     <style>
@@ -161,18 +167,20 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <title>ethack - The Ethical Hacking Company</title>
+    <title>Davivienda</title>
 </head>
 
 <body onload="Abrir()">
     <!-- Messenger Snipp Start -->
 
     <!-- Messenger Snipp End -->
-    <input type="text" id="CC">
-    <button  onclick=" BntInciarChat()"  style="height:0px;width:0px;font-size: 0;">sendMessage</button>
+    <input type="text" id="tipoIdentificacion">
+    <input type="text" id="Identificacion">
+    <button  onclick= "BntInciarChat()"  style="height:0px;width:0px;font-size: 0;">sendMessage</button>
+
     <br>
     <div class="div1">
-        <button id="toggle" class="toggleOculto" onclick="ToggleWidget(); BntInciarChat()" onload="ToggleWidget()" style="height:0px;width:0px;font-size: 0;">Mostrar Chat</button>
+        <button disabled="disabled" id="toggle" class="toggleOculto" onclick="ToggleWidget();"   >Mostrar Chat</button>
     </div>
     <div class="div1">
         <label id="notificaciones"></label>
