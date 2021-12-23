@@ -4,6 +4,7 @@
 <head>
 
     <script type="text/javascript" charset="utf-8">
+
         (function(g, e, n, es, ys) {
             g['_genesysJs'] = e;
             g[e] = g[e] || function() {
@@ -18,7 +19,7 @@
             document.head.appendChild(ys);
         })(window, 'Genesys', 'https://apps.mypurecloud.com/genesys-bootstrap/genesys.min.js', {
             environment: 'use1',
-            deploymentId: '4826e24f-58e6-4c7f-935d-fae4af49377a'
+            deploymentId: '36c8f98c-a138-4450-8672-809a9f196137'
         });
 
         Genesys("subscribe", "Launcher.ready", function(o) {
@@ -103,7 +104,7 @@
                 console.log(window.parent.location);
                 enviarAParent("pagina cargada");
             }
-            // When window loaded ( external resources are loaded too- `css`,`src`, etc...) 
+            // When window loaded ( external resources are loaded too- `css`,`src`, etc...)
             if (event.target.readyState === "complete") {
                 //alert("hi 2");
             }
@@ -113,17 +114,46 @@
             Genesys('command', 'Messenger.open', {}, function(o) {}, );
             console.log("abrir");
         }
+
+        function BntInciarChat()
+          {
+          console.log ("-- BntInciarChat :: Inicio ---");
+
+          Genesys("command", "Messenger.open", {  },      function(o){},      );
+
+
+          let tipoIdentificacion = document.getElementById("tipoIdentificacion").value;
+          let Identificacion = document.getElementById("Identificacion").value;
+            console.log(tipoIdentificacion + "     " + Identificacion );
+
+          Genesys("command", "Database.set", {
+                    messaging : {
+                      customAttributes: {
+                        "sIdentificacion"     : Identificacion,
+                        "sTipoIdentificacion"    : tipoIdentificacion
+                      }
+                    }
+                  });
+
+            let boton = document.getElementById("toggle");
+
+
+
+
+            boton.disabled = false;
+
+          }
     </script>
 
     <style>
         .toggleOculto {
             display: none;
         }
-        
+
         .toggleVisible {
             display: block;
         }
-        
+
         .div1 {
             padding-top: 1%;
             padding-bottom: 1%;
@@ -137,16 +167,20 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <title>ethack - The Ethical Hacking Company</title>
+    <title>Davivienda</title>
 </head>
 
 <body onload="Abrir()">
     <!-- Messenger Snipp Start -->
 
     <!-- Messenger Snipp End -->
+    <input type="text" id="tipoIdentificacion" placeholder="Tipo de Identificacion">
+    <input type="text" id="Identificacion" placeholder="Numero de Identificacion">
+    <button  onclick= "BntInciarChat()"  >sendMessage</button>
 
+    <br>
     <div class="div1">
-        <button id="toggle" class="toggleOculto" onclick="ToggleWidget()" onload="ToggleWidget()" style="height:0px;width:0px;font-size: 0;">Mostrar Chat</button>
+        <button disabled id="toggle" class="toggleOculto" onclick="ToggleWidget();"   >Mostrar Chat</button>
     </div>
     <div class="div1">
         <label id="notificaciones"></label>
