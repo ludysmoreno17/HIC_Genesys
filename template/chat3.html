@@ -36,15 +36,20 @@
 
     </header>
     <h2>hola </h2>
-    <div class="container1">
-        <div>Actividad detectada en iframe a las <label id="hour">-</label>:<label id="minutes">-</label>:<label id="seconds">-</label></div>
+      <div id="deviceready" class="blink">
+        <p class="event listening">Connecting to Device</p>
+        <p class="event received">Device is Ready</p>
     </div>
-    <div class="container1">
-        <div><label id="tinactivo">-</label></div>
-    </div>
+  <div class="container1">
+    <div>Actividad detectada en iframe a las <label id="hour">-</label>:<label id="minutes">-</label>:<label id="seconds">-</label></div>
+  </div>
+  <div class="container1">
+  <div><label id="tinactivo">-</label></div>
+  </div>
     <br>
     <br>
     <br>
+
     <button onclick="llamarAbrir()">Abrir</button>
     <br>
     <p>IFRAME</p>
@@ -54,11 +59,13 @@
     <br>
 
     <script type="text/javascript" charset="utf-8">
+        // En la siguiente variable se debe poner el link donde esta el frame con el chat de genesys
         const iframeSrc = "https://richardsuan.github.io/prueba_dav/template/chatFrame.html";
-        var hourLabel = document.getElementById("hour");
+        var contenedor = "iframe";
+        var hourLabel = document.getElementById("hour");//Estas variables  no son necesarias
         var minutesLabel = document.getElementById("minutes");
         var secondsLabel = document.getElementById("seconds");
-        var contenedor = "iframe";
+
 
         var lastMsgDate = new Date();
         lastMsgDate.setDate(lastMsgDate.getDate() + 1);
@@ -100,7 +107,8 @@
             tinactivo.innerHTML = segundos >= 0 ? segundos : 0;
         }
 
-        function pad(val) {
+        function pad(val) {//esta funcion se usa para agregar un cero al lado del time no es necesaria
+
             var valString = val + "";
             if (valString.length < 2) {
                 return "0" + valString;
@@ -113,20 +121,28 @@
             // When HTML/DOM elements are ready:
             if (event.target.readyState === "interactive") {
                 document.getElementById('frameDemo').src = iframeSrc;
-                setInterval(setTime, 1000);
+                setInterval(setTime, 500);
             }
         });
 
-        //-----------------------  eventos con  addEventListener    
+        //-----------------------  eventos con  addEventListener
         window.addEventListener("message", (event) => {
             console.log("-----  envento recibo del child ----");
             messageCallBack(event.data);
         }, false);
+        document.addEventListener('deviceready', onDeviceReady, false);
+
+        function onDeviceReady() {
+            // Cordova is now initialized. Have fun!
+
+            console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
+            document.getElementById('deviceready').classList.add('ready');
+        }
+
     </script>
 
 
 
 
 </body>
-
 </html>
