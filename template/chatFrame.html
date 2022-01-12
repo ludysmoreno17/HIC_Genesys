@@ -122,18 +122,7 @@
           Genesys("command", "Messenger.open", {  },      function(o){},      );
 
 
-          let tipoIdentificacion = document.getElementById("tipoIdentificacion").value;
-          let Identificacion = document.getElementById("Identificacion").value;
-            console.log(tipoIdentificacion + "     " + Identificacion );
-
-          Genesys("command", "Database.set", {
-                    messaging : {
-                      customAttributes: {
-                        "sIdentificacion"     : Identificacion,
-                        "sTipoIdentificacion"    : tipoIdentificacion
-                      }
-                    }
-                  });
+        
 
             let boton = document.getElementById("toggle");
 
@@ -174,11 +163,7 @@
     <!-- Messenger Snipp Start -->
 
     <!-- Messenger Snipp End -->
-    <input type="text" id="tipoIdentificacion" placeholder="Tipo de Identificacion">
-    <input type="text" id="Identificacion" placeholder="Numero de Identificacion">
-    <button  onclick= "BntInciarChat()"  >sendMessage</button>
-
-    <br>
+   
     <div class="div1">
         <button disabled id="toggle" class="toggleOculto" onclick="ToggleWidget();"   >Mostrar Chat</button>
     </div>
