@@ -55,7 +55,7 @@
     <p>IFRAME</p>
     <iframe id='frameDemo' height=450 width=400></iframe>
 
-    <button onclick="document.getElementById('frameDemo').contentWindow.ToggleWidget()">Abrir</button>
+    <button onclick="abrir()">Abrir</button>
     <br>
     <br>
 
@@ -72,7 +72,9 @@
         lastMsgDate.setDate(lastMsgDate.getDate() + 1);
         console.log(lastMsgDate.getDate()+"hola" );
 
-
+        function abrir()(
+          document.getElementById('frameDemo').contentWindow.ToggleWidget()
+        )
         function messageCallBack(params) {
             console.log(" ---------------mensaje-----------------");
             console.log(params);
