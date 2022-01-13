@@ -4,7 +4,7 @@
 <head>
 
     <script type="text/javascript" charset="utf-8">
-
+        //funcion para agregar generar el chat
         (function(g, e, n, es, ys) {
             g['_genesysJs'] = e;
             g[e] = g[e] || function() {
@@ -20,12 +20,18 @@
             //deploymentId: '36c8f98c-a138-4450-8672-809a9f196137'
             document.head.appendChild(ys);
         })(window, 'Genesys', 'https://apps.mypurecloud.com/genesys-bootstrap/genesys.min.js', {
-            
+
              environment: 'use1',
 
              deploymentId: 'bf6fa774-e669-424d-9c20-f4478b3a5646'
-        });
 
+
+        });
+        //la vatiable deploymentId se usa para identificarnos ante genesys. Esta debe ser diferente en zona privada y zona publica y tambien cambia
+        //por ambiente
+
+        //fin de la funcion para generar el chat
+        //
         Genesys("subscribe", "Launcher.ready", function(o) {
             var boton = document.getElementById("toggle");
             boton.className = "toggleVisible";
@@ -53,23 +59,22 @@
                     function(o) {},
                 );
                 boton.innerHTML = "Ocultar Chat";
-                boton.style.fontSize = 0;
-                boton.style.visibility = "hidden";
+
 
             } else {
                 Genesys("command", "Messenger.close", {},
                     function(o) {},
                 );
                 boton.innerHTML = "Mostrar Chat";
-                boton.style.fontSize = 0;
-                boton.style.visibility = "hidden";
+
             }
 
         }
 
         function enviarAParent(msgEnviar) {
 
-            var domain = 'file://';
+            //var domain = 'file://';
+            var domain = 'https://richardsuan.github.io/prueba_dav/template/chat3.html';
             const messageObj = {
                 message: msgEnviar
             };
@@ -114,28 +119,9 @@
             }
         });
 
-        function Abrir() {
-            Genesys('command', 'Messenger.open', {}, function(o) {}, );
-            console.log("abrir");
-        }
-
-        function BntInciarChat()
-          {
-          console.log ("-- BntInciarChat :: Inicio ---");
-
-          Genesys("command", "Messenger.open", {  },      function(o){},      );
-
-
-        
-
-            let boton = document.getElementById("toggle");
 
 
 
-
-            boton.disabled = false;
-
-          }
     </script>
 
     <style>
@@ -163,11 +149,9 @@
     <title>Davivienda</title>
 </head>
 
-<body onload="Abrir()">
-    <!-- Messenger Snipp Start -->
+<body>
 
-    <!-- Messenger Snipp End -->
-   
+
     <div class="div1">
         <button disabled id="toggle" class="toggleOculto" onclick="ToggleWidget();"   >Mostrar Chat</button>
     </div>

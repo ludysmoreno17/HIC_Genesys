@@ -69,15 +69,8 @@
 
         var lastMsgDate = new Date();
         lastMsgDate.setDate(lastMsgDate.getDate() + 1);
+        console.log(lastMsgDate.getDate()+"hola" );
 
-        function llamarAbrir() {
-
-            document.getElementById("frameDemo").contentWindow.ToggleWidget();
-
-
-
-
-        }
 
         function messageCallBack(params) {
             console.log(" ---------------mensaje-----------------");
@@ -132,12 +125,7 @@
         }, false);
         document.addEventListener('deviceready', onDeviceReady, false);
 
-        function onDeviceReady() {
-            // Cordova is now initialized. Have fun!
-
-            console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
-            document.getElementById('deviceready').classList.add('ready');
-        }
+        
 
     </script>
 
