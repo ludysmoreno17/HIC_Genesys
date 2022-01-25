@@ -121,7 +121,25 @@
 
 
 
+     function enviarP(){// esta funcion se usa para enviar los datos 
+          console.log ("-- BntInciarChat :: Inicio ---");
+          Genesys("command", "Messenger.open", {  },      function(o){},      );
+          let T_id ="CC";//
+          let N_id = "1234567";//Estas variables deben ser llenadas 
+          console.log(T_id + "     " + N_id );
+          Genesys("command", "Database.set", {
+                    messaging : {
+                      customAttributes: {
+                        "tid"     : T_id,
+                        "nid"    : N_id
+                      }
+                    }
+                  });
 
+            
+            
+
+          }
     </script>
 
     <style>
