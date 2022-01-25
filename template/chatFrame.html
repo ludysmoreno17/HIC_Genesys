@@ -115,32 +115,23 @@
             console.log("abrir");
         }
 
-        function BntInciarChat()
-          {
+        function enviarP(){
           console.log ("-- BntInciarChat :: Inicio ---");
-
           Genesys("command", "Messenger.open", {  },      function(o){},      );
-
-
-          let tipoIdentificacion = document.getElementById("tipoIdentificacion").value;
-          let Identificacion = document.getElementById("Identificacion").value;
-            console.log(tipoIdentificacion + "     " + Identificacion );
-
+          let T_id ="CC";//
+          let N_id = "1234567";//Estas variables deben ser llenadas 
+          console.log(T_id + "     " + N_id );
           Genesys("command", "Database.set", {
                     messaging : {
                       customAttributes: {
-                        "sIdentificacion"     : Identificacion,
-                        "sTipoIdentificacion"    : tipoIdentificacion
+                        "tid"     : T_id,
+                        "nid"    : N_id
                       }
                     }
                   });
 
-            let boton = document.getElementById("toggle");
-
-
-
-
-            boton.disabled = false;
+            
+            
 
           }
     </script>
