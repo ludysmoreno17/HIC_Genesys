@@ -26,19 +26,16 @@
             //Deployment_Messenger_ZonaPublica_WEB_LAB: a853540a-3a48-4e73-93b1-5d49711dc5ba
             document.head.appendChild(ys);
         })(window, 'Genesys', 'https://apps.mypurecloud.com/genesys-bootstrap/genesys.min.js', {
-
              environment: 'use1',
 
              deploymentId: 'a853540a-3a48-4e73-93b1-5d49711dc5ba'
-
-
         });
         //la vatiable deploymentId se usa para identificarnos ante genesys. Esta debe ser diferente en zona privada y zona publica y tambien cambia
         //por ambiente
 
         //fin de la funcion para generar el chat
         //
-        Genesys("subscribe", "Launcher.ready", function(o) {
+        Genesys("subscribe", "Launcher.ready", function(o) {//
             var boton = document.getElementById("toggle");
             boton.className = "toggleVisible";
         });
@@ -52,7 +49,7 @@
             enviarAParent("Conversations.messageAdded");
             console.log(o);
         });
-        Genesys("subscribe", "MessagingService.messagesReceived", function(o) {
+        Genesys("subscribe", "MessagingService.messagesReceived", function(o) {//Se ejecuta cada vez que hay un cambio dentro del campo de escritura 
             console.log("*******MessagingService.messagesReceived*******");
             enviarAParent("MessagingService.messagesReceived");
         });
