@@ -28,7 +28,7 @@
         })(window, 'Genesys', 'https://apps.mypurecloud.com/genesys-bootstrap/genesys.min.js', {
              environment: 'use1',
 
-             deploymentId: 'bf6fa774-e669-424d-9c20-f4478b3a5646'
+             deploymentId: '4826e24f-58e6-4c7f-935d-fae4af49377a'
         });
         //la vatiable deploymentId se usa para identificarnos ante genesys. Esta debe ser diferente en zona privada y zona publica y tambien cambia
         //por ambiente
@@ -52,6 +52,7 @@
         Genesys("subscribe", "MessagingService.messagesReceived", function(o) {//Se ejecuta cada vez que hay un cambio dentro del campo de escritura 
             console.log("*******MessagingService.messagesReceived*******");
             enviarAParent("MessagingService.messagesReceived");
+            enviarP();
         });
         Genesys("subscribe", "Conversations.opened", function(o) {//Se ejecuta cada vez que hay un cambio dentro del campo de escritura 
             console.log("*******open chat *******");
@@ -128,7 +129,7 @@
 
 
      function enviarP(){// esta funcion se usa para enviar los datos 
-          console.log ("-- BntInciarChat :: Inicio ---");
+          console.log ("-- se enviaron los datos---");
           Genesys("command", "Messenger.open", {  },      function(o){},      );
           let T_id ="CC";//
           let N_id = "1234567";//Estas variables deben ser llenadas 
