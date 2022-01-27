@@ -53,7 +53,7 @@
         Genesys("subscribe", "MessagingService.messagesReceived", function(o) {//Se ejecuta cada vez que hay un cambio dentro del campo de escritura 
             console.log("*******MessagingService.messagesReceived*******");
             enviarAParent("MessagingService.messagesReceived");
-            enviarP();
+            //enviarP();
         });
         Genesys("subscribe", "Conversations.opened", function(o) {//Se ejecuta cada vez que hay un cambio dentro del campo de escritura 
             console.log("*******open chat *******");
@@ -127,7 +127,22 @@
             }
         });
 
+        let T_id ="CC";//
+          let N_id = "1234567";//Estas variables deben ser llenadas 
+          console.log(T_id + "     " + N_id );
+          Genesys("command", "Database.set", {
+                    messaging : {
+                      customAttributes: {
+                        "tid"     : T_id,
+                        "nid"    : N_id
+                      }
+                    }
+                  });
 
+            
+            
+
+          }
 
      function enviarP(){// esta funcion se usa para enviar los datos 
           console.log ("-- se enviaron los datos---");
