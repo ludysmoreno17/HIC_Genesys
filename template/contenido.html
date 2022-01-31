@@ -6,9 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="./css/style.css" rel="stylesheet" type="text/css" />
     <title>Contenido</title>
-    <!--
     <script src="https://cobrowse.mypurecloud.com/cobrowse-jsapi-v1.js?deploymentKey=1ejSGxMWxyozKnj94WVSnAmqXRpHDilg" type="text/javascript"></script>
-    -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
     <link href="./css/style.css" rel="stylesheet" type="text/css" />
     <link href="./css/cobrowseApp.css" rel="stylesheet" type="text/css" />
@@ -40,10 +38,11 @@
         CobrowseIO.client().then(function() {
 
             CobrowseIO.trustedOrigins = [
-                'https://richardsuan.github.io/prueba_dav/template/contenido.html', // parent origin to trust
-                'https://richardsuan.github.io/prueba_dav/index.html', // another parent origin to trust
-                'https://richardsuan.github.io/prueba_dav/template/Chat.html',
-                'https://richardsuan.github.io/prueba_dav/template/cuenta.html'
+                './contenido.html', // página padre que contiene el codigo de cobrowse.IO
+                '../index.html', //  página hija para navegar a otra opción que vaya por modulo transvesal
+                './chat.html', // página hija para navegar a otra opción que vaya por modulo transvesal
+                './cuenta.html', //página hija para navegar a otra opción que vaya por modulo transvesal
+                './chat2.html'
 
 
             ];
@@ -142,28 +141,28 @@
 
 
     <div class="contenedor_pop">
-      <article>
-        <button id="btn-abrir-popup" class="btn-abrir-popup">Abrir Ventana Emergente</button>
-        <div class="overlay" id="overlay">
-            <div class="popup" id="popup">
-                <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
-                <img id="LogoAsistenciaRemota" src="../Icon-popUp-info.svg" alt="insertar SVG con la etiqueta image">
-                <p class="titulos">¿Desea iniciar la asistencia remota?</p>
-                <p class="textos">Comparta su pantalla con un asesor de call center cuando presente algún inconveniente en nuestro portal o desee profundizar en alguna funcionalidad.</p>
-                <br> 
-                <p class="textos">Comuníquese previamente con nuestras líneas de atención y comparta el código a el asesor.</p>
+        <article>
+            <button id="btn-abrir-popup" class="btn-abrir-popup">Abrir Ventana Emergente</button>
+            <div class="overlay" id="overlay">
+                <div class="popup" id="popup">
+                    <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
+                    <img id="LogoAsistenciaRemota" src="../Icon-popUp-info.svg" alt="insertar SVG con la etiqueta image">
+                    <p class="titulos">¿Desea iniciar la asistencia remota?</p>
+                    <p class="textos">Comparta su pantalla con un asesor de call center cuando presente algún inconveniente en nuestro portal o desee profundizar en alguna funcionalidad.</p>
+                    <br>
+                    <p class="textos">Comuníquese previamente con nuestras líneas de atención e ingrese el código indicado por el asesor.</p>
 
-                <p id="codigo">
-                    -
-                </p>
-                <button onclick="CrearCodigo()" type="button" id="boton">
+                    <p id="codigo">
+                        -
+                    </p>
+                    <button onclick="CrearCodigo()" type="button" id="boton">
                     <span>
-                    Generar código
+                    Compartir su pantalla
                     <span>
                 </button>
+                </div>
             </div>
-        </div>
-      </article>
+        </article>
     </div>
 
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem laboriosam id pariatur corporis, ipsa modi, fuga optio quod quos aut possimus doloribus nulla voluptates incidunt repellendus saepe illo repellat neque!</p>
