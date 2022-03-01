@@ -27,16 +27,16 @@
             //68240440-dd57-4e69-af59-254f9a2c1370
             document.head.appendChild(ys);
         })(window, 'Genesys', 'https://apps.mypurecloud.com/genesys-bootstrap/genesys.min.js', {
-             environment: 'use1',
+            environment: 'use1',
 
-             deploymentId: '4826e24f-58e6-4c7f-935d-fae4af49377a'
+            deploymentId: '4826e24f-58e6-4c7f-935d-fae4af49377a'
         });
         //la vatiable deploymentId se usa para identificarnos ante genesys. Esta debe ser diferente en zona privada y zona publica y tambien cambia
         //por ambiente
 
         //fin de la funcion para generar el chat
         //
-        Genesys("subscribe", "Launcher.ready", function(o) {//
+        Genesys("subscribe", "Launcher.ready", function(o) { //
             var boton = document.getElementById("toggle");
             boton.className = "toggleVisible";
         });
@@ -49,22 +49,24 @@
         Genesys("subscribe", "Conversations.messageAdded", function(o) {
             console.log("*******Conversations.messageAdded*******");
             enviarAParent("Conversations.messageAdded");
+            enviarP();
             console.log(o);
         });
-        Genesys("subscribe", "MessagingService.messagesReceived", function(o) {//Se ejecuta cada vez que hay un cambio dentro del campo de escritura 
+        Genesys("subscribe", "MessagingService.messagesReceived", function(o) { //Se ejecuta cada vez que hay un cambio dentro del campo de escritura 
             console.log("*******MessagingService.messagesReceived*******");
             enviarAParent("MessagingService.messagesReceived");
             //enviarP();
         });
-        Genesys("subscribe", "Conversations.opened", function(o) {//Se ejecuta cada vez que hay un cambio dentro del campo de escritura 
+        Genesys("subscribe", "Conversations.opened", function(o) { //Se ejecuta cada vez que hay un cambio dentro del campo de escritura 
             console.log("*******open chat *******");
             //enviarAParent("MessagingService.messagesReceived");
         });
-        
-        
-         Genesys("subscribe", "Conversations.closed", function(o){
+
+
+        Genesys("subscribe", "Conversations.closed", function(o) {
             console.log("*******close chat *******");
         });
+
         function ToggleWidget() {
 
             var boton = document.getElementById("toggle");
@@ -133,53 +135,53 @@
             }
         });
 
-        let T_id ="01";//
-          let N_id = "1234";//Estas variables deben ser llenadas 
-          console.log(T_id + "     " + N_id );
-          Genesys("command", "Database.set", {
-                    messaging : {
-                      customAttributes: {
-                        "tid"     : T_id,
-                        "nid"    : N_id
-                      }
+        let T_id = "01"; //
+        let N_id = "1234"; //Estas variables deben ser llenadas 
+        console.log(T_id + "     " + N_id);
+        Genesys("command", "Database.set", {
+            messaging: {
+                customAttributes: {
+                    "tid": T_id,
+                    "nid": N_id
+                }
+            }
+        });
+
+
+
+
+
+
+        function enviarP() { // esta funcion se usa para enviar los datos 
+            console.log("-- se enviaron los datos---");
+            Genesys("command", "Messenger.open", {}, function(o) {}, );
+            let T_id = "01"; //
+            let N_id = "1234"; //Estas variables deben ser llenadas 
+            console.log(T_id + "     " + N_id);
+            Genesys("command", "Database.set", {
+                messaging: {
+                    customAttributes: {
+                        "tid": T_id,
+                        "nid": N_id
                     }
-                  });
+                }
+            });
 
-            
-            
 
-          
 
-     function enviarP(){// esta funcion se usa para enviar los datos 
-          console.log ("-- se enviaron los datos---");
-          Genesys("command", "Messenger.open", {  },      function(o){},      );
-          let T_id ="CC";//
-          let N_id = "1234567";//Estas variables deben ser llenadas 
-          console.log(T_id + "     " + N_id );
-          Genesys("command", "Database.set", {
-                    messaging : {
-                      customAttributes: {
-                        "tid"     : T_id,
-                        "nid"    : N_id
-                      }
-                    }
-                  });
 
-            
-            
-
-          }
+        }
     </script>
 
     <style>
         .toggleOculto {
             display: none;
         }
-
+        
         .toggleVisible {
             display: block;
         }
-
+        
         .div1 {
             padding-top: 1%;
             padding-bottom: 1%;
@@ -200,7 +202,7 @@
 
 
     <div class="div1">
-        <button  id="toggle" class="toggleOculto" onclick="ToggleWidget()"   >Mostrar Chat</button>
+        <button id="toggle" class="toggleOculto" onclick="ToggleWidget()">Mostrar Chat</button>
     </div>
     <div class="div1">
         <label id="notificaciones"></label>
