@@ -47,26 +47,31 @@
         });
 
         Genesys("subscribe", "Conversations.messageAdded", function(o) {
-            console.log("*******Conversations.messageAdded*******");
+            //console.log("*******Conversations.messageAdded*******");
             enviarAParent("Conversations.messageAdded");
            // enviarP();
             console.log(o);
         });
         Genesys("subscribe", "MessagingService.messagesReceived", function(o) { //Se ejecuta cada vez que hay un cambio dentro del campo de escritura 
-            console.log("*******MessagingService.messagesReceived*******");
+           // console.log("*******MessagingService.messagesReceived*******");
             enviarAParent("MessagingService.messagesReceived");
             //enviarP();
         });
         Genesys("subscribe", "Conversations.opened", function(o) { //Se ejecuta cada vez que hay un cambio dentro del campo de escritura 
-            console.log("*******open chat *******");
-            //enviarAParent("MessagingService.messagesReceived");
+            //console.log("*******open chat *******");
+            enviarAParent("MessagingService.messagesReceived");
         });
 
 
         Genesys("subscribe", "Conversations.closed", function(o) {
             console.log("*******close chat *******");
         });
-
+        Genesys("subscribe", "Database.updated", function(o){
+            console.log("******* updated *******");
+        });
+        Genesys("subscribe", "Database.removed", function(o){
+            console.log("******* removed *******");
+        });
         function ToggleWidget() {
 
             var boton = document.getElementById("toggle");
