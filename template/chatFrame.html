@@ -148,6 +148,10 @@
         });
 
         function ConsultarDb(){
+        console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++");
+         console.log(Genesys("command", "Database.get", { "name": "tid" }));
+         console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++");
+         console.log(Genesys("command", "Database.get", { "messaging.customAttributes": "tid" }));
          console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++");
          console.log(Genesys("command", "Database.get", { "name": "messaging.customAttributes" }));
          console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++");
