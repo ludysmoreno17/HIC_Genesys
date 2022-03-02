@@ -49,7 +49,7 @@
         Genesys("subscribe", "Conversations.messageAdded", function(o) {
             console.log("*******Conversations.messageAdded*******");
             enviarAParent("Conversations.messageAdded");
-            enviarP();
+           // enviarP();
             console.log(o);
         });
         Genesys("subscribe", "MessagingService.messagesReceived", function(o) { //Se ejecuta cada vez que hay un cambio dentro del campo de escritura 
@@ -147,11 +147,11 @@
             }
         });
 
-
-        console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++");
-        console.log(Genesys("command", "Database.get", { name: "tid" }));
-        console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++");
-
+        function ConsultarDb(){
+         console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++");
+         console.log(Genesys("command", "Database.get", { name: "tid" }));
+         console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++");
+        }
         function enviarP() { // esta funcion se usa para enviar los datos 
             console.log("-- se enviaron los datos---");
             Genesys("command", "Messenger.open", {}, function(o) {}, );
@@ -203,6 +203,7 @@
 
     <div class="div1">
         <button id="toggle" class="toggleOculto" onclick="ToggleWidget()">Mostrar Chat</button>
+        <button onclick="ConsultarDb()">Consultar base de datos</button>
     </div>
     <div class="div1">
         <label id="notificaciones"></label>
