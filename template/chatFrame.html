@@ -151,6 +151,15 @@
          console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++");
          console.log(Genesys("command", "Database.get", { "name": "messaging.customAttributes" }));
          console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++");
+         console.log(Genesys("command", "Database.get", { name: "messaging.customAttributes" }));
+         console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++");
+         console.log(Genesys("command", "Database.get", { tid: "messaging.customAttributes" }));
+         console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++");
+         console.log(Genesys("command", "Database.get", { name: "messaging.customAttributes.tid" }));
+         console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++");
+         console.log(Genesys("command", "Database.get", { messaging: "customAttributes.tid" }));
+         console.log("+++++++++++++++++++++++++++++++++++++++++++++++++++");
+         console.log(Genesys("command", "Database.get", { messaging: "customAttributes" }));
         }
         function enviarP() { // esta funcion se usa para enviar los datos 
             console.log("-- se enviaron los datos---");
