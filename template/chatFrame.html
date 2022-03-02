@@ -47,22 +47,24 @@
         });
 
         Genesys("subscribe", "Conversations.messageAdded", function(o) {
-            //console.log("*******Conversations.messageAdded*******");
+            console.log("*******Conversations.messageAdded*******");
             enviarAParent("Conversations.messageAdded");
            // enviarP();
             console.log(o);
         });
         Genesys("subscribe", "MessagingService.messagesReceived", function(o) { //Se ejecuta cada vez que hay un cambio dentro del campo de escritura 
-           // console.log("*******MessagingService.messagesReceived*******");
+            console.log("*******MessagingService.messagesReceived*******");
             enviarAParent("MessagingService.messagesReceived");
             //enviarP();
         });
         Genesys("subscribe", "Conversations.opened", function(o) { //Se ejecuta cada vez que hay un cambio dentro del campo de escritura 
-            //console.log("*******open chat *******");
+            console.log("*******open chat *******");
             enviarAParent("MessagingService.messagesReceived");
         });
 
-
+        Genesys("subscribe", "Auth.authenticating", function(o) {
+            console.log("*******Auth.authenticating *******");
+        });
         Genesys("subscribe", "Conversations.closed", function(o) {
             console.log("*******close chat *******");
         });
