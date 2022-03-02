@@ -65,6 +65,12 @@
         Genesys("subscribe", "Auth.authenticating", function(o) {
             console.log("*******Auth.authenticating *******");
         });
+        Genesys("subscribe", "Auth.loggedOut", function(o) {
+            console.log("*******Auth.authenticating *******");
+        });
+        Genesys("subscribe", "Auth.Auth.authenticated", function(o) {
+            console.log("*******Auth.authenticating *******");
+        });
         Genesys("subscribe", "Conversations.closed", function(o) {
             console.log("*******close chat *******");
         });
