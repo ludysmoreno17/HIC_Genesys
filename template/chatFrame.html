@@ -58,7 +58,22 @@
         Genesys("subscribe", "MessagingService.messagesReceived", function(o) { //Se ejecuta cada vez que hay un cambio dentro del campo de escritura 
             console.log("*******MessagingService.messagesReceived*******");
             enviarAParent("MessagingService.messagesReceived");
-          
+            /*console.log(o);
+            console.log(o.data.messages[0].text);
+            const mensaje = o.data.messages[0].text;
+            const direction = o.data.messages[0].direction;
+            if (direction.toLowerCase() == "inbound" )  {
+              Genesys("command", "Database.set", {
+                        messaging : {
+                          customAttributes: {
+                            "nid"     : "1",
+                            "tid"    :  "01"
+                          }
+                        }
+                      });
+                console.log("*******MessagingService.messagesReceived  se asignan custom Attr  con Database.set  *******");
+            }*/
+            //enviarP();
         });
         Genesys("subscribe", "Conversations.opened", function(o) { //Se ejecuta cada vez que hay un cambio dentro del campo de escritura 
             //console.log("*******open chat *******");
@@ -151,8 +166,8 @@
             }
         });
 
-        let T_id = ""; //
-        let N_id = ""; //Estas variables deben ser llenadas 
+        let T_id = "01"; //
+        let N_id = "1023031994"; //Estas variables deben ser llenadas 
         console.log(T_id + "     " + N_id);
         Genesys("command", "Database.set", {
             messaging: {
