@@ -12,6 +12,7 @@ function Prueba1() {
     "dark-mode": "<DARK_MODE>",
     "pc-organization-id": "6e6d5224-1909-48fa-a982-66cef3fa4c08",
     "pc-deployment-id": "6820a6a6-3755-4152-8d3f-53e7e8d2bedc",
+    "color-primary":"#fc3d61",
   };
 
   (async () => {
