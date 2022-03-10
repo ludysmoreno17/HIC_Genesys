@@ -76,8 +76,8 @@
           document.getElementById('frameDemo').contentWindow.ToggleWidget();
         }
         function messageCallBack(params) {
-            console.log(" ---------------mensaje-----------------");
-            console.log(params);
+            //console.log(" ---------------mensaje-----------------");
+            //console.log(params);
 
             let currentdate = new Date();
             lastMsgDate = currentdate;
@@ -93,7 +93,7 @@
             let ElapsedTime = currentdate - lastMsgDate;
             if (ElapsedTime / 1000 > 30) // mas de 30 segundos de inactividad
             {
-                console.log("------- setTime :: enviando notifiacion por inactividad ------");
+                //console.log("------- setTime :: enviando notifiacion por inactividad ------");
                 lastMsgDate.setDate(lastMsgDate.getDate() + 1);
                 var ifrm = document.getElementById("frameDemo");
                 ifrm.contentWindow.postMessage('alertaInactividad', '*');
@@ -123,7 +123,7 @@
 
         //-----------------------  eventos con  addEventListener
         window.addEventListener("message", (event) => {
-            console.log("-----  envento recibo del child ----");
+            //console.log("-----  envento recibo del child ----");
             messageCallBack(event.data);
         }, false);
         document.addEventListener('deviceready', onDeviceReady, false);
