@@ -9,7 +9,7 @@ function Prueba1() {
     //"customer-avatar-url": "<CUSTOMER_AVATAR_URL>",
     "pc-queue": "4a706e91-e8ea-4dc3-94bf-4445b0e42e32",
     //"registration-type": "<REGISTRATION_TYPE>",
-    "dark-mode": "<DARK_MODE>",
+
     "pc-organization-id": "6e6d5224-1909-48fa-a982-66cef3fa4c08",
     "pc-deployment-id": "6820a6a6-3755-4152-8d3f-53e7e8d2bedc",
     "color-primary":"#fc3d61",
