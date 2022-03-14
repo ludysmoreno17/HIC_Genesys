@@ -16,6 +16,8 @@
             ys.async = 1;
             ys.src = n;
             ys.charset = 'utf-8';
+            var cod = document.getElementById("valores").value;
+            alert(cod);
             //environment: 'use1',
             //deploymentId: '36c8f98c-a138-4450-8672-809a9f196137'
             //Deployment ID Zona Publica: ad09fab3-4e4f-4e76-bdc8-b018b57cb1e0
@@ -32,7 +34,7 @@
         })(window, 'Genesys', 'https://apps.mypurecloud.com/genesys-bootstrap/genesys.min.js', {
             environment: 'use1',
 
-            deploymentId: '575de9e8-470d-4eca-b816-ffcd71e18191'
+            deploymentId: cod
         });
         //la vatiable deploymentId se usa para identificarnos ante genesys. Esta debe ser diferente en zona privada y zona publica y tambien cambia
         //por ambiente
@@ -234,6 +236,15 @@
 
 
     <div class="div1">
+        <select name="select" id="valores">
+           
+            <option value="575de9e8-470d-4eca-b816-ffcd71e18191">App Interna</option>
+            <option value="eca6822c-3d4b-4743-b95b-9750d2905991" >App Externa</option>
+            <option value="4826e24f-58e6-4c7f-935d-fae4af49377a">LAB zona privada</option>
+            <option value="a853540a-3a48-4e73-93b1-5d49711dc5ba">LAB zona publica</option>
+        </select>
+
+        <input type="submit" value="Enviar">
         <button id="toggle" class="toggleOculto" onclick="ToggleWidget()">Mostrar Chat</button>
         <button onclick="ConsultarDb()">Consultar base de datos</button>
     </div>
