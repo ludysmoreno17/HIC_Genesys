@@ -75,8 +75,13 @@
           Genesys("subscribe", "Conversations.started", function(o) {
               //console.log("******* Conversations.started*******");
               enviarAParent("Conversations.started");
-          });
+              AsignarAtributos();
 
+          });
+          Genesys("subscribe", "Conversations.ready", function () {
+           console.log("*******Conversations.ready*******");
+           AsignarAtributos();
+         });
           Genesys("subscribe", "Conversations.messageAdded", function(o) {
              // console.log("*******Conversations.messageAdded*******");
               enviarAParent("Conversations.messageAdded");
