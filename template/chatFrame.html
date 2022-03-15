@@ -209,11 +209,12 @@
 
         function AsignarAtributos() {
           console.log("@@@@@@@@@@@@@@@@@@@  ASIGNANDO ATRIBUTOS @@@@@@@@@@@@@@@@@");
+
           Genesys("command", "Database.set", {
               messaging: {
                   customAttributes: {
-                      "tid": T_id,
-                      "nid": N_id
+                      "tid": "01",
+                      "nid": "1234"
                   }
               }
           });
