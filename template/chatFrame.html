@@ -213,6 +213,16 @@
               }
           });
         }
+        function BntInciarChat() {
+          console.log("-- BntInciarChat :: Inicio ---");
+          if (!ConversationOpened) {
+            Genesys("command", "Messenger.open", {}, function (o) {});
+          }
+
+          let boton = document.getElementById("toggle");
+          boton.innerHTML = "Ocultar Chat";
+          console.log("-- BntInciarChat :: Fin ---");
+        }
 
     </script>
 
