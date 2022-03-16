@@ -2,19 +2,32 @@
 <html lang="en">
 
 <head>
-
+    <!--Codigo javascript para la implementacion del chat web mensanger de genesys -->
     <script type="text/javascript" charset="utf-8">
+    /*inicio
+    paso de parametros de webmessanger 
+    Las variables que se encueentran a continuacion  se usan para el paso de parametros de web messanger 
+     ya que en estas se va a almacenar el origen de los mensajes si son hechos por el bot "Bot" del banco o por un asesor.
+    "Human". 
+    */
     const OriginatingEntity = Object.freeze({
       Human: "Human",
       Bot: "Bot",
     });
     var current_OriginatingEntity = "";
-        //funcion para agregar generar el chat
-        function genesysWidget() {
+    /*fin 
+    Esto para una interaccion en donde el cliente usa el chat de zona privada este chat va y consulta los datos del cliente 
+    para que en el momento de ser atendido por un asesor tenga los datos para despues de colgar la interaccion y pasdo un minuto
+    se vuelva a iniciar la conversacion y poder enviar los parametros para hacer de nuevo la consulta 
+    */
+    
+    //funcion para generar el chat cuando se pulsa el boton de iniciar wiget escogido.
+    function genesysWidget() {
           Window.Genesys = null;
           var gdeploymentId;
-          gdeploymentId = document.getElementById("CBoxdeploymentId").value;
+          gdeploymentId = document.getElementById("CBoxdeploymentId").value;// de aqui se optiene el valor del deployment id escogido por el usuario en el selector
           console.log(gdeploymentId);
+          window.alert(gdeploymentId);// con esto se muestra un mensaje que nos indica cual es el deployment id usado
           (function(g, e, n, es, ys) {
               g['_genesysJs'] = e;
               g[e] = g[e] || function() {
@@ -40,15 +53,15 @@
               //app
               //Interna: 575de9e8-470d-4eca-b816-ffcd71e18191
                //Externa: eca6822c-3d4b-4743-b95b-9750d2905991
-              window.alert(gdeploymentId);
+              
               document.head.appendChild(ys);
           })(window, 'Genesys', 'https://apps.mypurecloud.com/genesys-bootstrap/genesys.min.js', {
               environment: 'use1',
 
               deploymentId: gdeploymentId
-          });
+          });//aqui se asigna el deployment id seleccionado y se crea el webmesanger 
         }
-        //la vatiable deploymentId se usa para identificarnos ante genesys. Esta debe ser diferente en zona privada y zona publica y tambien cambia
+        //la variable deploymentId se usa para identificarnos ante genesys. Esta debe ser diferente en zona privada y zona publica y tambien cambia
         //por ambiente
 
         //fin de la funcion para generar el chat
@@ -58,9 +71,9 @@
           localStorage.setItem(
             "_68240440-dd57-4e69-af59-254f9a2c1370:gcmcopn",
             '{"value":"false","ttl":null}'
-          );
-          intervalID = setInterval(Eventos, 500);
-          CfgPopUp();
+          );//esta funcion se usa para no abrir el chat de manera automatica
+          intervalID = setInterval(Eventos, 500);//esta funcion se usa para ejecutar las suscripciones 
+          
         };
         function Eventos() {
           console.log("==== Eventos  :: inicio");
@@ -68,25 +81,25 @@
             //console.log("==== Eventos  :: aun lo existe objeto Genesys");
             return;
           }
-          Genesys("subscribe", "Launcher.ready", function(o) { //
+          Genesys("subscribe", "Launcher.ready", function(o) { // este evento se ejecuta cuando esta listo el chat para ejecutar
               var boton = document.getElementById("toggle");
               boton.className = "toggleVisible";
           });
 
-          Genesys("subscribe", "Conversations.started", function(o) {
+          Genesys("subscribe", "Conversations.started", function(o) {//se ejecuta unicamente al primer mensaje
               //console.log("******* Conversations.started*******");
               enviarAParent("Conversations.started");
               AsignarAtributos();
 
           });
-          Genesys("subscribe", "Conversations.ready", function () {
+          Genesys("subscribe", "Conversations.ready", function () {//se ejecuta cuando el chat esta listo para conversar con el cliente 
            console.log("*******Conversations.ready*******");
            AsignarAtributos();
          });
-          Genesys("subscribe", "Conversations.messageAdded", function(o) {
-             // console.log("*******Conversations.messageAdded*******");
+          Genesys("subscribe", "Conversations.messageAdded", function(o) {//se ejecuta cuando el cliente está escribiendo en el campo del chat
+              console.log("*******Conversations.messageAdded*******");
               enviarAParent("Conversations.messageAdded");
-             // enviarP();
+             
               console.log(o);
           });
           Genesys("subscribe", "MessagingService.messagesReceived", function(o) { //Se ejecuta cada vez que hay un cambio dentro del campo de escritura

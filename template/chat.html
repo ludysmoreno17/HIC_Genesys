@@ -32,7 +32,23 @@
 
              deploymentId: 'a853540a-3a48-4e73-93b1-5d49711dc5ba'
         });
+        Genesys("subscribe", "Conversations.ready", function () {//se ejecuta cuando el chat esta listo para conversar con el cliente 
+           console.log("*******Conversations.ready*******");
+           AsignarAtributos();
+         });
+          Genesys("subscribe", "Conversations.messageAdded", function(o) {//se ejecuta cuando el cliente está escribiendo en el campo del chat
+              console.log("*******Conversations.messageAdded*******");
+              enviarAParent("Conversations.messageAdded");
+             
+              console.log(o);
+          });
+          Genesys("subscribe", "MessagingService.messagesReceived", function(o) { //Se ejecuta cada vez que hay un cambio dentro del campo de escritura
+              console.log("*******MessagingService.messagesReceived*******");
+              enviarAParent("MessagingService.messagesReceived");
 
+    //console.log("*******MessagingService.messagesReceived Final*******");
+              //enviarP();
+          });
         function toggleMessenger() {
             console.log("hola");
             Genesys("command", "Messenger.open", {},
