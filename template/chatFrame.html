@@ -102,8 +102,6 @@
              
               console.log(o);
           });
-
-
           Genesys("subscribe", "Conversations.opened", function(o) { //Se ejecuta cada vez que se abre el chat
               //console.log("*******open chat *******");
               enviarAParent("MessagingService.messagesReceived");
@@ -193,7 +191,6 @@
             }
 
         });
-
         function alertaInactividad() {
             var notificaciones = document.getElementById("notificaciones");
             notificaciones.innerHTML = "**** Alerta por inactividad ****";
@@ -201,7 +198,6 @@
                 notificaciones.innerHTML = "-";
             }, 5000);
         }
-
         document.addEventListener('readystatechange', event => {
             // When HTML/DOM elements are ready:
             if (event.target.readyState === "interactive") {
@@ -216,19 +212,6 @@
                 //alert("hi 2");
             }
         });
-
-       
-        function BntInciarChat() {
-          console.log("-- BntInciarChat :: Inicio ---");
-          if (!ConversationOpened) {
-            Genesys("command", "Messenger.open", {}, function (o) {});
-          }
-
-          let boton = document.getElementById("toggle");
-          boton.innerHTML = "Ocultar Chat";
-          console.log("-- BntInciarChat :: Fin ---");
-        }
-
     </script>
 
   
@@ -244,40 +227,28 @@
 
 <body>
 
-  <div class="divFrm">
-    <div class="divField">
+    <div class="divFrm">
+      <div class="divField">
 
-      <label for="CBoxdeploymentId">Escoger deployment:</label>
-        <select name="CBoxdeploymentId" id="CBoxdeploymentId">
-          <option value="575de9e8-470d-4eca-b816-ffcd71e18191">App Interna</option>
-          <option value="eca6822c-3d4b-4743-b95b-9750d2905991" >App Externa</option>
-          <option value="4826e24f-58e6-4c7f-935d-fae4af49377a">LAB zona privada</option>
-          <option value="a853540a-3a48-4e73-93b1-5d49711dc5ba">LAB zona publica</option>
-        </select>
+        <label for="CBoxdeploymentId">Escoger deployment:</label>
+          <select name="CBoxdeploymentId" id="CBoxdeploymentId">
+            <option value="575de9e8-470d-4eca-b816-ffcd71e18191">App Interna</option>
+            <option value="eca6822c-3d4b-4743-b95b-9750d2905991" >App Externa</option>
+            <option value="4826e24f-58e6-4c7f-935d-fae4af49377a">LAB zona privada</option>
+            <option value="a853540a-3a48-4e73-93b1-5d49711dc5ba">LAB zona publica</option>
+          </select>
 
+      </div>
     </div>
-  </div>
-<div class="divField">
-    <button id="btngenesysWidget"  onclick="genesysWidget();">Iniciar Widget escogido</button>
-</div>
-<div class="divField">
-  <button id="btnIniciarChat" class="oculto" onclick="BntInciarChat();">Iniciar Chat</button>
-</div>
-
-</div>
+    <div class="divField">
+        <button id="btngenesysWidget"  onclick="genesysWidget();">Iniciar Widget escogido</button>
+    </div>
 
     <div class="div1">
-
-
-
         <button id="toggle" class="toggleOculto" onclick="ToggleWidget()">Mostrar Chat</button>
-
     </div>
     <div class="div1">
         <label id="notificaciones"></label>
     </div>
-    
-
 </body>
-
 </html>
