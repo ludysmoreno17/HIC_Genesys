@@ -7,112 +7,26 @@
     <link href="./css/style.css" rel="stylesheet" type="text/css" />
     <title>Contenido</title>
     <script src="https://cobrowse.mypurecloud.com/cobrowse-jsapi-v1.js?deploymentKey=1ejSGxMWxyozKnj94WVSnAmqXRpHDilg" type="text/javascript"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
-    <link href="./css/style.css" rel="stylesheet" type="text/css" />
-    <link href="./css/cobrowseApp.css" rel="stylesheet" type="text/css" />
+
+    <link href="../static/css/style.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
     <script>
-        (function(w, t, c, p, s, e) {
-            p = new Promise(function(r) {
-                w[c] = {
-                    client: function() {
-                        if (!s) {
-                            s = document.createElement(t);
-                            s.src = 'https://js.cobrowse.io/CobrowseIO.js';
-                            s.async = 1;
-                            e = document.getElementsByTagName(t)[0];
-                            e.parentNode.insertBefore(s, e);
-                            s.onload = function() {
-                                r(w[c]);
-                            };
-                        }
-                        return p;
-                    }
-                };
-            });
-        })(window, 'script', 'CobrowseIO');
-        CobrowseIO.license = "8tVUclEjaBXUWw";
-        //CobrowseIO.license = "hN3jxzqAuYIKrA";
-        CobrowseIO.client().then(function() {
-
-            CobrowseIO.trustedOrigins = [
-                './contenido.html', // página padre que contiene el codigo de cobrowse.IO
-                '../index.html', //  página hija para navegar a otra opción que vaya por modulo transvesal
-                './chat.html', // página hija para navegar a otra opción que vaya por modulo transvesal
-                './cuenta.html', //página hija para navegar a otra opción que vaya por modulo transvesal
-                './chat2.html'
-
-
-            ];
-
-            CobrowseIO.start();
-        });
-
-        function CrearCodigo() {
-            CobrowseIO.client().then(function() {
-                // create a code a display it to the user using your own UI
-                CobrowseIO.createSessionCode().then(function(code) {
-                    console.log('your code is::', code);
-                    document.getElementById("codigo").innerHTML = code;
-
-                });
-
-            });
-        }
-        // A generic consent dialog class
-        function Consent() {
-            var container = document.createElement('div');
-
-            function content(title, description) {
-                return '\
-      <div style="background: rgba(50, 50, 50, 0.4); position: fixed; z-index: 2147483647; bottom: 0; top: 0; left: 0; right: 0">\
-        <div style="color: #333; font-family:sans-serif; line-height:140%; position:fixed; padding:25px; background:white; border-radius:15px; z-index:2147483647; top:50px; left:50%; width:75%; max-width:350px; transform:translateX(-50%); box-shadow:0px 0px 15px #33333322;">\
-          <div class="titulos"><b>' + title + '</b></div>\
-          <div class="textos">' + description + '</div>\
-          <div >\
-            <a class="cobrowse-deny" style="cursor:pointer; padding:10px;">Denegar</a>\
-            <a class="cobrowse-allow" style="cursor:pointer; padding:10px; font-weight: bold;">Aceptar</a>\
-          </div>\
-        </div>\
-      </div>\
-    ';
-            }
-
-            this.show = function(title, description) {
-                return new Promise(function(resolve) {
-                    container.innerHTML = content(title, description);
-
-                    container.querySelector('.cobrowse-allow').addEventListener('click', function() {
-                        resolve(true);
-                        var span = document.getElementById('btn-cerrar-popup');
-
-                        span.click();
-                        this.hide();
-                    }.bind(this));
-
-                    container.querySelector('.cobrowse-deny').addEventListener('click', function() {
-                        resolve(false);
-                        this.hide()
-                    }.bind(this));
-
-                    if (document.body) document.body.appendChild(container);
-                }.bind(this));
-            }.bind(this);
-
-            this.hide = function() {
-                if (container.parentNode) {
-                    container.parentNode.removeChild(container);
-                }
-            }.bind(this);
-        }
-
-        // Integration with Cobrowse
-        CobrowseIO.confirmSession = function() {
-            return new Consent().show('Asistencia remota', '¿Quiere compartir pantalla?');
-        }
-    </script>
+    (function(w,t,c,p,s,e){p=new Promise(function(r){w[c]={client:function(){if(!s){
+    s=document.createElement(t);s.src='https://js.cobrowse.io/CobrowseIO.js';s.async=1;
+    e=document.getElementsByTagName(t)[0];e.parentNode.insertBefore(s,e);s.onload=function()
+    {r(w[c]);};}return p;}};});})(window,'script','CobrowseIO');
+    CobrowseIO.license = "8tVUclEjaBXUWw";
+    //CobrowseIO.license = "hN3jxzqAuYIKrA";
+    CobrowseIO.client().then(function(){
+      CobrowseIO.trustedOrigins = [
+          'https://richardsuan.github.io/prueba_dav/template/contenido.html', // parent origin to trust
+          'https://richardsuan.github.io/prueba_dav/index.html' // another parent origin to trust
+      ];
+        CobrowseIO.start();
+    });
+</script>
     <header>
         <div class="titulo">
             <h1>Contenido </h1>
@@ -125,95 +39,80 @@
 
         <nav class="navegacion">
             <ul>
-                <a href="../index.html">Co browse-Inicio</a>
+                 <a href="../index.html">Co browse-Inicio</a>
                 <a href="./cuenta.html">Cuenta</a>
-                <a href="./chat.html">Chat</a>
-                <a href="./PruebaConFormularioTodosLosCampos.html">Chat2</a>
-                <a href="./chat3.html">Chat3</a>
+                <a href="./chat.html">Chat Z Publica</a>
+                <a href="./chat3.html">Chat Z Privada</a>
                 <a href="./contenido.html">Contenido</a>
+
 
             </ul>
         </nav>
 
     </header>
+    <div class="row">
+
+        <div class="main">
+
+        </div>
+        <div class="side">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem laboriosam id pariatur corporis, ipsa modi, fuga optio quod quos aut possimus doloribus nulla voluptates incidunt repellendus saepe illo repellat neque!</p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita excepturi accusamus earum veniam obcaecati! Quos itaque voluptate eos aliquam enim rem, distinctio, voluptas possimus non ab laudantium ipsa veniam omnis. Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Voluptate nobis minima, odio at veritatis nemo odit quos eaque, adipisci suscipit aut consequuntur autem non rerum voluptatem voluptatum! Voluptas, rerum impedit?Lorem ipsum dolor sit amet consectetur adipisicing elit. Non
+            ipsa alias porro neque consequatur placeat quas quasi ex dolorem corporis ullam qui exercitationem quo, ratione, error laboriosam ab incidunt eos!load Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni dolor mollitia eius at, voluptatibus
+            corporis nesciunt! Sequi quo, voluptas incidunt magnam, et numquam autem amet dicta blanditiis quia sit odit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti beatae voluptates reiciendis atque facere harum laboriosam. Dolores
+            voluptatum animi molestiae labore eaque sint ipsa qui cupiditate neque. Voluptas, totam possimus? lo100 Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, quaerat. Dicta expedita in quasi? Voluptatum, exercitationem quam.
+            Sunt, omnis non? Cumque laborum architecto mollitia fugiat cupiditate voluptate molestias commodi nisi.
+
+        </div>
+    </div>
+   <script>
+        (function(g, e, n, es, ys) {
+
+            g['_genesysJs'] = e;
+
+            g[e] = g[e] || function() {
+
+                (g[e].q = g[e].q || []).push(arguments)
+
+            };
+
+            g[e].t = 1 * new Date();
+
+            g[e].c = es;
+
+            ys = document.createElement('script');
+            ys.async = 1;
+            ys.src = n;
+            ys.charset = 'utf-8';
+            document.head.appendChild(ys);
+
+        })(window, 'Genesys', 'https://apps.mypurecloud.com/genesys-bootstrap/genesys.min.js', {
+             environment: 'use1',
+
+             deploymentId: 'a'
+        });
+
+        function toggleMessenger() {
+            console.log("hola");
+            Genesys("command", "Messenger.open", {},
+                function(o) {}, // if resolved
+                function(o) { // if rejected
+                    Genesys("command", "Messenger.close");
+                }
+            );
+        }
+    </script>
+
+    <script src="https://cobrowse.mypurecloud.com/cobrowse-jsapi-v1.js?deploymentKey=1ejSGxMWxyozKnj94WVSnAmqXRpHDilg" type="text/javascript"></script>
+</head>
 
 
-
-
-    <div class="contenedor_pop">
-        <article>
-            <button id="btn-abrir-popup" class="btn-abrir-popup">Abrir Ventana Emergente</button>
-            <div class="overlay" id="overlay">
-                <div class="popup" id="popup">
-                    <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times"></i></a>
-                    <img id="LogoAsistenciaRemota" src="../Icon-popUp-info.svg" alt="insertar SVG con la etiqueta image">
-                    <p class="titulos">¿Desea iniciar la asistencia remota?</p>
-                    <p class="textos">Comparta su pantalla con un asesor de call center cuando presente algún inconveniente en nuestro portal o desee profundizar en alguna funcionalidad.</p>
-                    <br>
-                    <p class="textos">Comuníquese previamente con nuestras líneas de atención e ingrese el código indicado por el asesor.</p>
-
-                    <p id="codigo">
-                        -
-                    </p>
-                    <button onclick="CrearCodigo()" type="button" id="boton">
-                    <span>
-                    Compartir su pantalla
-                    <span>
-                </button>
-                </div>
-            </div>
-        </article>
+    <div class="container_button">
+        <button onclick="toggleMessenger()">Desplegar Chat</button>
     </div>
 
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem laboriosam id pariatur corporis, ipsa modi, fuga optio quod quos aut possimus doloribus nulla voluptates incidunt repellendus saepe illo repellat neque!</p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita excepturi accusamus earum veniam obcaecati! Quos itaque voluptate eos aliquam enim rem, distinctio, voluptas possimus non ab laudantium ipsa veniam omnis. Lorem ipsum dolor sit amet consectetur
-    adipisicing elit. Voluptate nobis minima, odio at veritatis nemo odit quos eaque, adipisci suscipit aut consequuntur autem non rerum voluptatem voluptatum! Voluptas, rerum impedit?Lorem ipsum dolor sit amet consectetur adipisicing elit. Non ipsa alias
-    porro neque consequatur placeat quas quasi ex dolorem corporis ullam qui exercitationem quo, ratione, error laboriosam ab incidunt eos!load Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni dolor mollitia eius at, voluptatibus corporis
-    nesciunt! Sequi quo, voluptas incidunt magnam, et numquam autem amet dicta blanditiis quia sit odit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti beatae voluptates reiciendis atque facere harum laboriosam. Dolores voluptatum animi
-    molestiae labore eaque sint ipsa qui cupiditate neque. Voluptas, totam possimus? lo100 Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, quaerat. Dicta expedita in quasi? Voluptatum, exercitationem quam. Sunt, omnis non? Cumque
-    laborum architecto mollitia fugiat cupiditate voluptate molestias commodi nisi.
 
-
-
-    <div class="contenedor_pop">
-        <article>
-
-            <br>
-            <br>
-            <br>
-            <iframe src="https://richardsuan.github.io/prueba_dav/template/contenido.html" id="miframe" height="400" width="500" name="demo">
-        <p>Su navegador no es compatible con iframes</p>
-        </iframe>
-            <br>
-            <br>
-            <iframe src="https://richardsuan.github.io/prueba_dav/template/chat.html" id="miframe" height="400" width="500" name="demo">
-    <p>Su navegador no es compatible con iframes</p>
-    </iframe>
-            <br>
-
-            <p class="cobrowse-masked">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum, tortor ut commodo elementum, felis dui pharetra arcu, id vulputate neque orci ut velit. Vestibulum facilisis mauris sapien, ut rutrum lacus sollicitudin eu. Curabitur odio ligula,
-                eleifend sodales nisl et, feugiat mattis sapien. Nulla commodo gravida est a lacinia. Fusce cursus eleifend dui at tincidunt. Aliquam eu metus odio. Morbi metus erat, mattis sit amet ultricies ullamcorper, dignissim nec ante. Nulla congue
-                purus quis interdum tincidunt. Nam at libero leo. Nunc dignissim auctor turpis sit amet ornare. Duis vulputate faucibus sem id dignissim. Vivamus sed orci odio. Maecenas nec dapibus mauris. Pellentesque a massa et lectus volutpat gravida
-                eget id neque.
-            </p>
-            <p class="mascara">
-                Nunc eleifend venenatis est vel finibus. Mauris vel arcu sit amet risus vulputate gravida a pulvinar felis. In nulla turpis, dignissim ac orci sit amet, suscipit luctus eros. Ut luctus blandit mi. Donec lacinia vehicula fringilla. Vivamus nec ligula ut
-                dui vestibulum iaculis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras ac sem in mi pulvinar eleifend vitae in sapien. Mauris vel dui nibh. Maecenas fermentum ante cursus nisi tincidunt
-                mattis. Phasellus quis sapien sollicitudin, tempor diam nec, ullamcorper sapien.
-            </p>
-            <p>
-                Fusce tempor arcu nec ante congue, nec tempor ipsum eleifend. Pellentesque consequat ac ipsum et euismod. Donec posuere massa in felis scelerisque feugiat. Mauris id arcu enim. Curabitur pulvinar elit nec turpis mollis tincidunt. Curabitur lectus elit,
-                scelerisque nec facilisis ac, semper vel libero. Pellentesque efficitur velit nunc, eu vehicula est pretium quis. Nunc urna tellus, tempus vitae eros eget, efficitur molestie lorem. Phasellus ut facilisis libero. Mauris laoreet libero
-                diam, a tempor risus pharetra eget. Mauris nibh urna, accumsan vel accumsan euismod, lobortis nec lectus. Mauris elementum urna vel feugiat ultrices. Nulla sodales nisl sit amet ante fermentum, sit amet porttitor diam sollicitudin. Pellentesque
-                ut pellentesque turpis. In rutrum augue dui, vel molestie ipsum pulvinar facilisis.
-            </p>
-        </article>
-
-
-    </div>
-
-    <script src="../javascript/popup.js"></script>
 
 </body>
 
