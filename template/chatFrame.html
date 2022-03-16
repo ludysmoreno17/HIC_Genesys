@@ -67,7 +67,7 @@
         //fin de la funcion para generar el chat
         //
         var intervalID;
-        window.onload = function () {
+        window.onload = function () {// esta funcion se usa para que no se abra el chat solo 
           localStorage.setItem(
             "_68240440-dd57-4e69-af59-254f9a2c1370:gcmcopn",
             '{"value":"false","ttl":null}'
@@ -75,7 +75,7 @@
           intervalID = setInterval(Eventos, 500);//esta funcion se usa para ejecutar las suscripciones 
           
         };
-        function Eventos() {
+        function Eventos() {// esta funcion se usa para ejecutar las sucripciones a los diferentes eventos que hay
           console.log("==== Eventos  :: inicio");
           if (typeof Genesys == "undefined") {
             //console.log("==== Eventos  :: aun lo existe objeto Genesys");
@@ -102,10 +102,19 @@
              
               console.log(o);
           });
-          Genesys("subscribe", "MessagingService.messagesReceived", function(o) { //Se ejecuta cada vez que hay un cambio dentro del campo de escritura
+
+
+          Genesys("subscribe", "Conversations.opened", function(o) { //Se ejecuta cada vez que se abre el chat
+              //console.log("*******open chat *******");
+              enviarAParent("MessagingService.messagesReceived");
+          });
+          /*Codigo para realizar la funcion de paso de parametros -inicio***************/
+          Genesys("subscribe", "MessagingService.messagesReceived", function(o) { //Se ejecuta cada vez que hay un mensaje 
+
               console.log("*******MessagingService.messagesReceived*******");
               enviarAParent("MessagingService.messagesReceived");
               //console.log("*******MessagingService.messagesReceived Inicio*******");
+              
               const mensaje = o.data.messages[0].text;
               const direction = o.data.messages[0].direction;
               console.log("direction::%s", direction);
@@ -125,35 +134,23 @@
                   }
                 }
               }
-
-    //console.log("*******MessagingService.messagesReceived Final*******");
-              //enviarP();
-          });
-          Genesys("subscribe", "Conversations.opened", function(o) { //Se ejecuta cada vez que hay un cambio dentro del campo de escritura
-              //console.log("*******open chat *******");
-              enviarAParent("MessagingService.messagesReceived");
-          });
-
-          Genesys("subscribe", "Auth.authenticating", function(o) {
-              console.log("*******Auth.authenticating *******");
-          });
-          Genesys("subscribe", "Auth.loggedOut", function(o) {
-              console.log("*******Auth.authenticating *******");
-          });
-          Genesys("subscribe", "Auth.Auth.authenticated", function(o) {
-              console.log("*******Auth.authenticating *******");
-          });
-          Genesys("subscribe", "Conversations.closed", function(o) {
-              console.log("*******close chat *******");
-          });
-          Genesys("subscribe", "Database.updated", function(o){
-              console.log("******* updated *******");
-          });
-          Genesys("subscribe", "Database.removed", function(o){
-              console.log("******* removed *******");
+              
           });
         }
-        function ToggleWidget() {
+        function AsignarAtributos() {
+          console.log("@@@@@@@@@@@@@@@@@@@  ASIGNANDO ATRIBUTOS @@@@@@@@@@@@@@@@@");
+
+          Genesys("command", "Database.set", {
+              messaging: {
+                  customAttributes: {
+                      "tid": "01",
+                      "nid": "1234"
+                  }
+              }
+          });
+        }
+        //fin**************************************** 
+        function ToggleWidget() {//se usa para abrir o cerrar el chat
 
             var boton = document.getElementById("toggle");
             if (boton.innerHTML == "Mostrar Chat") {
@@ -173,7 +170,7 @@
 
         }
 
-        function enviarAParent(msgEnviar) {
+        function enviarAParent(msgEnviar) {//se usa para enviar los postmessage a la pagina padre
 
             //var domain = 'file://';
             var domain = 'https://richardsuan.github.io/prueba_dav/template/chat3.html';
@@ -187,8 +184,7 @@
         }
 
         window.addEventListener("message", (event) => {
-            //console.log(event);
-            //console.log(event.data);
+            
             if (typeof event.data === 'string') {
                 if (event.data == "alertaInactividad") {
                     console.log("----- recibido mensaje del contenedor ----");
@@ -221,18 +217,7 @@
             }
         });
 
-        function AsignarAtributos() {
-          console.log("@@@@@@@@@@@@@@@@@@@  ASIGNANDO ATRIBUTOS @@@@@@@@@@@@@@@@@");
-
-          Genesys("command", "Database.set", {
-              messaging: {
-                  customAttributes: {
-                      "tid": "01",
-                      "nid": "1234"
-                  }
-              }
-          });
-        }
+       
         function BntInciarChat() {
           console.log("-- BntInciarChat :: Inicio ---");
           if (!ConversationOpened) {
@@ -291,8 +276,7 @@
     <div class="div1">
         <label id="notificaciones"></label>
     </div>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    
 
 </body>
 
