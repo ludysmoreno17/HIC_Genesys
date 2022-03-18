@@ -14,8 +14,9 @@
       var y=document.getElementById("miframevideo").style.width;
     
       function aumentarX(){
+        console.log(x);
         var xint=parseInt(x, 10)+20;
-
+        console.log(xint);
         document.getElementById("miframevideo").style.width=xint.toString()+"px";
       }
       function disminuirX(){
@@ -26,12 +27,12 @@
       function aumentarY(){
         var yint=parseInt(y, 10)+20;
 
-        document.getElementById("miframevideo").style.width=xint.toString()+"px";
+        document.getElementById("miframevideo").style.width=yint.toString()+"px";
       }
       function disminuirY(){
         var yint=parseInt(y, 10)-20;
 
-        document.getElementById("miframevideo").style.width=xint.toString()+"px";
+        document.getElementById("miframevideo").style.width=yint.toString()+"px";
       }
     </script>
   </head>
