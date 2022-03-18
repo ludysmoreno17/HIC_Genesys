@@ -7,6 +7,33 @@
     <title>davivienda</title>
     
     <link rel="shortcut icon" href="../índice.ico">
+    <script>
+      document.getElementById("miframe").style.height="400px";
+      document.getElementById("miframe").style.width="400px";
+      var x=document.getElementById("miframe").style.height;
+      var y=document.getElementById("miframe").style.width;
+    
+      function aumentarX(){
+        var xint=parseInt(x, 10)+20;
+
+        document.getElementById("miframe").style.width=xint.toString()+"px";
+      }
+      function disminuirX(){
+        var xint=parseInt(x, 10)-20;
+
+        document.getElementById("miframe").style.width=xint.toString()+"px";
+      }
+      function aumentarY(){
+        var yint=parseInt(y, 10)+20;
+
+        document.getElementById("miframe").style.width=xint.toString()+"px";
+      }
+      function disminuirY(){
+        var yint=parseInt(y, 10)-20;
+
+        document.getElementById("miframe").style.width=xint.toString()+"px";
+      }
+    </script>
   </head>
   <body>
    
@@ -35,10 +62,13 @@
     </header>
     <h1>auvious</h1>
     <br>
-    <iframe src="https://ludysmoreno17.github.io/HIC_Genesys/template/videosolo.html" id="miframe" height="400" width="500" name="demo">
+    <iframe src="https://ludysmoreno17.github.io/HIC_Genesys/template/videosolo.html" id="miframevideo" height="400" width="500" name="demo">
       <p>Su navegador no es compatible con iframes</p>
-      </iframe>
-    
+    </iframe>
+    <button onclick="aumentarX()">X +</button>
+    <button onclick="disminuirX()">X -</button>
+    <button onclick="aumentarY()">Y +</button>
+    <button onclick="disminuirY()">Y -</button>
 
             <p class="cobrowse-masked" >
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum, tortor ut commodo elementum, felis dui pharetra arcu, id vulputate neque orci ut velit. Vestibulum facilisis mauris sapien, ut rutrum lacus sollicitudin eu. Curabitur odio ligula,
