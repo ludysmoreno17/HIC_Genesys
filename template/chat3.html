@@ -24,7 +24,7 @@
 
         <nav class="navegacion">
             <ul>
-                 <a href="../index.html">Co browse-Inicio</a>
+                <a href="../index.html">Co browse-Inicio</a>
                 <a href="./cuenta.html">Cuenta</a>
                 <a href="./chat.html">Chat Z Publica</a>
                 <a href="./chat3.html">Chat Z Privada</a>
@@ -36,16 +36,16 @@
 
     </header>
     <h2>hola </h2>
-      <div id="deviceready" class="blink">
+    <div id="deviceready" class="blink">
         <p class="event listening">Connecting to Device</p>
         <p class="event received">Device is Ready</p>
     </div>
-  <div class="container1">
-    <div>Actividad detectada en iframe a las <label id="hour">-</label>:<label id="minutes">-</label>:<label id="seconds">-</label></div>
-  </div>
-  <div class="container1">
-  <div><label id="tinactivo">-</label></div>
-  </div>
+    <div class="container1">
+        <div>Actividad detectada en iframe a las <label id="hour">-</label>:<label id="minutes">-</label>:<label id="seconds">-</label></div>
+    </div>
+    <div class="container1">
+        <div><label id="tinactivo">-</label></div>
+    </div>
     <br>
     <br>
     <br>
@@ -61,20 +61,21 @@
 
     <script type="text/javascript" charset="utf-8">
         // En la siguiente variable se debe poner el link donde esta el frame con el chat de genesys
-        const iframeSrc = "https://richardsuan.github.io/prueba_dav/template/chatFrame.html";
+        const iframeSrc = "https://ludysmoreno17.github.io/HIC_Genesys/template/chatFrame.html";
         var contenedor = "iframe";
-        var hourLabel = document.getElementById("hour");//Estas variables  no son necesarias
+        var hourLabel = document.getElementById("hour"); //Estas variables  no son necesarias
         var minutesLabel = document.getElementById("minutes");
         var secondsLabel = document.getElementById("seconds");
 
 
         var lastMsgDate = new Date();
         lastMsgDate.setDate(lastMsgDate.getDate() + 1);
-        console.log(lastMsgDate.getDate()+"hola" );
+        console.log(lastMsgDate.getDate() + "hola");
 
-        function abrir(){
-          document.getElementById('frameDemo').contentWindow.ToggleWidget();
+        function abrir() {
+            document.getElementById('frameDemo').contentWindow.ToggleWidget();
         }
+
         function messageCallBack(params) {
             console.log(" ---------------mensaje-----------------");
             console.log(params);
@@ -103,7 +104,7 @@
             tinactivo.innerHTML = segundos >= 0 ? segundos : 0;
         }
 
-        function pad(val) {//esta funcion se usa para agregar un cero al lado del time no es necesaria
+        function pad(val) { //esta funcion se usa para agregar un cero al lado del time no es necesaria
 
             var valString = val + "";
             if (valString.length < 2) {
@@ -127,13 +128,11 @@
             messageCallBack(event.data);
         }, false);
         document.addEventListener('deviceready', onDeviceReady, false);
-
-
-
     </script>
 
 
 
 
 </body>
+
 </html>
