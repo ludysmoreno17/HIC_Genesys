@@ -14,22 +14,22 @@
     
       function aumentarX(){
         console.log(x);
-        var xint=x+20;
+        x=x+20;
         console.log(xint);
         document.getElementById("miframevideo").style.width=xint.toString()+"px";
       }
       function disminuirX(){
-        var xint=x-20;
+        x=x-20;
 
         document.getElementById("miframevideo").style.width=xint.toString()+"px";
       }
       function aumentarY(){
-        var yint=y+20;
+        y=y+20;
 
         document.getElementById("miframevideo").style.width=yint.toString()+"px";
       }
       function disminuirY(){
-        var yint=y-20;
+        y=y-20;
 
         document.getElementById("miframevideo").style.width=yint.toString()+"px";
       }
@@ -65,6 +65,9 @@
     <iframe src="https://ludysmoreno17.github.io/HIC_Genesys/template/videosolo.html" id="miframevideo" height="400px" width="500px" name="demo">
       <p>Su navegador no es compatible con iframes</p>
     </iframe>
+    <br>
+    <br>
+    <br>
     <button onclick="aumentarX()">X +</button>
     <button onclick="disminuirX()">X -</button>
     <button onclick="aumentarY()">Y +</button>
